@@ -1,0 +1,1922 @@
+2026-04-14 19:42:10: (node:29785) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 19:42:10: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 20:45:17: (node:21588) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 20:45:17: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 21:08:31: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:31:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:31:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:31:     at node:net:2274:7
+2026-04-14 21:08:31:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:31:   code: 'EADDRINUSE',
+2026-04-14 21:08:31:   errno: -98,
+2026-04-14 21:08:31:   syscall: 'listen',
+2026-04-14 21:08:31:   address: '0.0.0.0',
+2026-04-14 21:08:31:   port: 7000
+2026-04-14 21:08:31: }
+2026-04-14 21:08:32: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:32:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:32:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:32:     at node:net:2274:7
+2026-04-14 21:08:32:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:32:   code: 'EADDRINUSE',
+2026-04-14 21:08:32:   errno: -98,
+2026-04-14 21:08:32:   syscall: 'listen',
+2026-04-14 21:08:32:   address: '0.0.0.0',
+2026-04-14 21:08:32:   port: 7000
+2026-04-14 21:08:32: }
+2026-04-14 21:08:32: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:32:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:32:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:32:     at node:net:2274:7
+2026-04-14 21:08:32:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:32:   code: 'EADDRINUSE',
+2026-04-14 21:08:32:   errno: -98,
+2026-04-14 21:08:32:   syscall: 'listen',
+2026-04-14 21:08:32:   address: '0.0.0.0',
+2026-04-14 21:08:32:   port: 7000
+2026-04-14 21:08:32: }
+2026-04-14 21:08:33: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:33:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:33:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:33:     at node:net:2274:7
+2026-04-14 21:08:33:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:33:   code: 'EADDRINUSE',
+2026-04-14 21:08:33:   errno: -98,
+2026-04-14 21:08:33:   syscall: 'listen',
+2026-04-14 21:08:33:   address: '0.0.0.0',
+2026-04-14 21:08:33:   port: 7000
+2026-04-14 21:08:33: }
+2026-04-14 21:08:33: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:33:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:33:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:33:     at node:net:2274:7
+2026-04-14 21:08:33:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:33:   code: 'EADDRINUSE',
+2026-04-14 21:08:33:   errno: -98,
+2026-04-14 21:08:33:   syscall: 'listen',
+2026-04-14 21:08:33:   address: '0.0.0.0',
+2026-04-14 21:08:33:   port: 7000
+2026-04-14 21:08:33: }
+2026-04-14 21:08:34: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:34:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:34:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:34:     at node:net:2274:7
+2026-04-14 21:08:34:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:34:   code: 'EADDRINUSE',
+2026-04-14 21:08:34:   errno: -98,
+2026-04-14 21:08:34:   syscall: 'listen',
+2026-04-14 21:08:34:   address: '0.0.0.0',
+2026-04-14 21:08:34:   port: 7000
+2026-04-14 21:08:34: }
+2026-04-14 21:08:34: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:34:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:34:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:34:     at node:net:2274:7
+2026-04-14 21:08:34:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:34:   code: 'EADDRINUSE',
+2026-04-14 21:08:34:   errno: -98,
+2026-04-14 21:08:34:   syscall: 'listen',
+2026-04-14 21:08:34:   address: '0.0.0.0',
+2026-04-14 21:08:34:   port: 7000
+2026-04-14 21:08:34: }
+2026-04-14 21:08:35: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:35:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:35:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:35:     at node:net:2274:7
+2026-04-14 21:08:35:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:35:   code: 'EADDRINUSE',
+2026-04-14 21:08:35:   errno: -98,
+2026-04-14 21:08:35:   syscall: 'listen',
+2026-04-14 21:08:35:   address: '0.0.0.0',
+2026-04-14 21:08:35:   port: 7000
+2026-04-14 21:08:35: }
+2026-04-14 21:08:35: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:35:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:35:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:35:     at node:net:2274:7
+2026-04-14 21:08:35:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:35:   code: 'EADDRINUSE',
+2026-04-14 21:08:35:   errno: -98,
+2026-04-14 21:08:35:   syscall: 'listen',
+2026-04-14 21:08:35:   address: '0.0.0.0',
+2026-04-14 21:08:35:   port: 7000
+2026-04-14 21:08:35: }
+2026-04-14 21:08:36: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:36:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:36:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:36:     at node:net:2274:7
+2026-04-14 21:08:36:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:36:   code: 'EADDRINUSE',
+2026-04-14 21:08:36:   errno: -98,
+2026-04-14 21:08:36:   syscall: 'listen',
+2026-04-14 21:08:36:   address: '0.0.0.0',
+2026-04-14 21:08:36:   port: 7000
+2026-04-14 21:08:36: }
+2026-04-14 21:08:36: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:36:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:36:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:36:     at node:net:2274:7
+2026-04-14 21:08:36:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:36:   code: 'EADDRINUSE',
+2026-04-14 21:08:36:   errno: -98,
+2026-04-14 21:08:36:   syscall: 'listen',
+2026-04-14 21:08:36:   address: '0.0.0.0',
+2026-04-14 21:08:36:   port: 7000
+2026-04-14 21:08:36: }
+2026-04-14 21:08:37: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:37:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:37:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:37:     at node:net:2274:7
+2026-04-14 21:08:37:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:37:   code: 'EADDRINUSE',
+2026-04-14 21:08:37:   errno: -98,
+2026-04-14 21:08:37:   syscall: 'listen',
+2026-04-14 21:08:37:   address: '0.0.0.0',
+2026-04-14 21:08:37:   port: 7000
+2026-04-14 21:08:37: }
+2026-04-14 21:08:37: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:37:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:37:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:37:     at node:net:2274:7
+2026-04-14 21:08:37:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:37:   code: 'EADDRINUSE',
+2026-04-14 21:08:37:   errno: -98,
+2026-04-14 21:08:37:   syscall: 'listen',
+2026-04-14 21:08:37:   address: '0.0.0.0',
+2026-04-14 21:08:37:   port: 7000
+2026-04-14 21:08:37: }
+2026-04-14 21:08:38: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:38:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:38:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:38:     at node:net:2274:7
+2026-04-14 21:08:38:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:38:   code: 'EADDRINUSE',
+2026-04-14 21:08:38:   errno: -98,
+2026-04-14 21:08:38:   syscall: 'listen',
+2026-04-14 21:08:38:   address: '0.0.0.0',
+2026-04-14 21:08:38:   port: 7000
+2026-04-14 21:08:38: }
+2026-04-14 21:08:38: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:38:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:38:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:38:     at node:net:2274:7
+2026-04-14 21:08:38:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:38:   code: 'EADDRINUSE',
+2026-04-14 21:08:38:   errno: -98,
+2026-04-14 21:08:38:   syscall: 'listen',
+2026-04-14 21:08:38:   address: '0.0.0.0',
+2026-04-14 21:08:38:   port: 7000
+2026-04-14 21:08:38: }
+2026-04-14 21:08:39: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:39:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:39:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:39:     at node:net:2274:7
+2026-04-14 21:08:39:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:39:   code: 'EADDRINUSE',
+2026-04-14 21:08:39:   errno: -98,
+2026-04-14 21:08:39:   syscall: 'listen',
+2026-04-14 21:08:39:   address: '0.0.0.0',
+2026-04-14 21:08:39:   port: 7000
+2026-04-14 21:08:39: }
+2026-04-14 21:08:39: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:39:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:39:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:39:     at node:net:2274:7
+2026-04-14 21:08:39:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:39:   code: 'EADDRINUSE',
+2026-04-14 21:08:39:   errno: -98,
+2026-04-14 21:08:39:   syscall: 'listen',
+2026-04-14 21:08:39:   address: '0.0.0.0',
+2026-04-14 21:08:39:   port: 7000
+2026-04-14 21:08:39: }
+2026-04-14 21:08:40: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:40:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:40:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:40:     at node:net:2274:7
+2026-04-14 21:08:40:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:40:   code: 'EADDRINUSE',
+2026-04-14 21:08:40:   errno: -98,
+2026-04-14 21:08:40:   syscall: 'listen',
+2026-04-14 21:08:40:   address: '0.0.0.0',
+2026-04-14 21:08:40:   port: 7000
+2026-04-14 21:08:40: }
+2026-04-14 21:08:40: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:40:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:40:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:40:     at node:net:2274:7
+2026-04-14 21:08:40:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:40:   code: 'EADDRINUSE',
+2026-04-14 21:08:40:   errno: -98,
+2026-04-14 21:08:40:   syscall: 'listen',
+2026-04-14 21:08:40:   address: '0.0.0.0',
+2026-04-14 21:08:40:   port: 7000
+2026-04-14 21:08:40: }
+2026-04-14 21:08:41: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:41:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:41:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:41:     at node:net:2274:7
+2026-04-14 21:08:41:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:41:   code: 'EADDRINUSE',
+2026-04-14 21:08:41:   errno: -98,
+2026-04-14 21:08:41:   syscall: 'listen',
+2026-04-14 21:08:41:   address: '0.0.0.0',
+2026-04-14 21:08:41:   port: 7000
+2026-04-14 21:08:41: }
+2026-04-14 21:08:41: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:41:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:41:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:41:     at node:net:2274:7
+2026-04-14 21:08:41:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:41:   code: 'EADDRINUSE',
+2026-04-14 21:08:41:   errno: -98,
+2026-04-14 21:08:41:   syscall: 'listen',
+2026-04-14 21:08:41:   address: '0.0.0.0',
+2026-04-14 21:08:41:   port: 7000
+2026-04-14 21:08:41: }
+2026-04-14 21:08:41: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:41:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:41:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:41:     at node:net:2274:7
+2026-04-14 21:08:41:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:41:   code: 'EADDRINUSE',
+2026-04-14 21:08:41:   errno: -98,
+2026-04-14 21:08:41:   syscall: 'listen',
+2026-04-14 21:08:41:   address: '0.0.0.0',
+2026-04-14 21:08:41:   port: 7000
+2026-04-14 21:08:41: }
+2026-04-14 21:08:42: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:42:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:42:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:42:     at node:net:2274:7
+2026-04-14 21:08:42:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:42:   code: 'EADDRINUSE',
+2026-04-14 21:08:42:   errno: -98,
+2026-04-14 21:08:42:   syscall: 'listen',
+2026-04-14 21:08:42:   address: '0.0.0.0',
+2026-04-14 21:08:42:   port: 7000
+2026-04-14 21:08:42: }
+2026-04-14 21:08:42: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:42:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:42:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:42:     at node:net:2274:7
+2026-04-14 21:08:42:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:42:   code: 'EADDRINUSE',
+2026-04-14 21:08:42:   errno: -98,
+2026-04-14 21:08:42:   syscall: 'listen',
+2026-04-14 21:08:42:   address: '0.0.0.0',
+2026-04-14 21:08:42:   port: 7000
+2026-04-14 21:08:42: }
+2026-04-14 21:08:43: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:43:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:43:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:43:     at node:net:2274:7
+2026-04-14 21:08:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:43:   code: 'EADDRINUSE',
+2026-04-14 21:08:43:   errno: -98,
+2026-04-14 21:08:43:   syscall: 'listen',
+2026-04-14 21:08:43:   address: '0.0.0.0',
+2026-04-14 21:08:43:   port: 7000
+2026-04-14 21:08:43: }
+2026-04-14 21:08:43: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:43:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:43:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:43:     at node:net:2274:7
+2026-04-14 21:08:43:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:43:   code: 'EADDRINUSE',
+2026-04-14 21:08:43:   errno: -98,
+2026-04-14 21:08:43:   syscall: 'listen',
+2026-04-14 21:08:43:   address: '0.0.0.0',
+2026-04-14 21:08:43:   port: 7000
+2026-04-14 21:08:43: }
+2026-04-14 21:08:44: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:44:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:44:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:44:     at node:net:2274:7
+2026-04-14 21:08:44:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:44:   code: 'EADDRINUSE',
+2026-04-14 21:08:44:   errno: -98,
+2026-04-14 21:08:44:   syscall: 'listen',
+2026-04-14 21:08:44:   address: '0.0.0.0',
+2026-04-14 21:08:44:   port: 7000
+2026-04-14 21:08:44: }
+2026-04-14 21:08:44: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:44:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:44:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:44:     at node:net:2274:7
+2026-04-14 21:08:44:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:44:   code: 'EADDRINUSE',
+2026-04-14 21:08:44:   errno: -98,
+2026-04-14 21:08:44:   syscall: 'listen',
+2026-04-14 21:08:44:   address: '0.0.0.0',
+2026-04-14 21:08:44:   port: 7000
+2026-04-14 21:08:44: }
+2026-04-14 21:08:45: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:45:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:45:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:45:     at node:net:2274:7
+2026-04-14 21:08:45:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:45:   code: 'EADDRINUSE',
+2026-04-14 21:08:45:   errno: -98,
+2026-04-14 21:08:45:   syscall: 'listen',
+2026-04-14 21:08:45:   address: '0.0.0.0',
+2026-04-14 21:08:45:   port: 7000
+2026-04-14 21:08:45: }
+2026-04-14 21:08:45: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:45:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:45:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:45:     at node:net:2274:7
+2026-04-14 21:08:45:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:45:   code: 'EADDRINUSE',
+2026-04-14 21:08:45:   errno: -98,
+2026-04-14 21:08:45:   syscall: 'listen',
+2026-04-14 21:08:45:   address: '0.0.0.0',
+2026-04-14 21:08:45:   port: 7000
+2026-04-14 21:08:45: }
+2026-04-14 21:08:46: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:46:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:46:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:46:     at node:net:2274:7
+2026-04-14 21:08:46:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:46:   code: 'EADDRINUSE',
+2026-04-14 21:08:46:   errno: -98,
+2026-04-14 21:08:46:   syscall: 'listen',
+2026-04-14 21:08:46:   address: '0.0.0.0',
+2026-04-14 21:08:46:   port: 7000
+2026-04-14 21:08:46: }
+2026-04-14 21:08:46: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:46:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:46:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:46:     at node:net:2274:7
+2026-04-14 21:08:46:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:46:   code: 'EADDRINUSE',
+2026-04-14 21:08:46:   errno: -98,
+2026-04-14 21:08:46:   syscall: 'listen',
+2026-04-14 21:08:46:   address: '0.0.0.0',
+2026-04-14 21:08:46:   port: 7000
+2026-04-14 21:08:46: }
+2026-04-14 21:08:47: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:47:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:47:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:47:     at node:net:2274:7
+2026-04-14 21:08:47:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:47:   code: 'EADDRINUSE',
+2026-04-14 21:08:47:   errno: -98,
+2026-04-14 21:08:47:   syscall: 'listen',
+2026-04-14 21:08:47:   address: '0.0.0.0',
+2026-04-14 21:08:47:   port: 7000
+2026-04-14 21:08:47: }
+2026-04-14 21:08:47: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:47:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:47:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:47:     at node:net:2274:7
+2026-04-14 21:08:47:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:47:   code: 'EADDRINUSE',
+2026-04-14 21:08:47:   errno: -98,
+2026-04-14 21:08:47:   syscall: 'listen',
+2026-04-14 21:08:47:   address: '0.0.0.0',
+2026-04-14 21:08:47:   port: 7000
+2026-04-14 21:08:47: }
+2026-04-14 21:08:48: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:48:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:48:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:48:     at node:net:2274:7
+2026-04-14 21:08:48:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:48:   code: 'EADDRINUSE',
+2026-04-14 21:08:48:   errno: -98,
+2026-04-14 21:08:48:   syscall: 'listen',
+2026-04-14 21:08:48:   address: '0.0.0.0',
+2026-04-14 21:08:48:   port: 7000
+2026-04-14 21:08:48: }
+2026-04-14 21:08:48: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:48:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:48:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:48:     at node:net:2274:7
+2026-04-14 21:08:48:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:48:   code: 'EADDRINUSE',
+2026-04-14 21:08:48:   errno: -98,
+2026-04-14 21:08:48:   syscall: 'listen',
+2026-04-14 21:08:48:   address: '0.0.0.0',
+2026-04-14 21:08:48:   port: 7000
+2026-04-14 21:08:48: }
+2026-04-14 21:08:49: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:49:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:49:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:49:     at node:net:2274:7
+2026-04-14 21:08:49:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:49:   code: 'EADDRINUSE',
+2026-04-14 21:08:49:   errno: -98,
+2026-04-14 21:08:49:   syscall: 'listen',
+2026-04-14 21:08:49:   address: '0.0.0.0',
+2026-04-14 21:08:49:   port: 7000
+2026-04-14 21:08:49: }
+2026-04-14 21:08:49: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:49:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:49:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:49:     at node:net:2274:7
+2026-04-14 21:08:49:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:49:   code: 'EADDRINUSE',
+2026-04-14 21:08:49:   errno: -98,
+2026-04-14 21:08:49:   syscall: 'listen',
+2026-04-14 21:08:49:   address: '0.0.0.0',
+2026-04-14 21:08:49:   port: 7000
+2026-04-14 21:08:49: }
+2026-04-14 21:08:50: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:50:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:50:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:50:     at node:net:2274:7
+2026-04-14 21:08:50:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:50:   code: 'EADDRINUSE',
+2026-04-14 21:08:50:   errno: -98,
+2026-04-14 21:08:50:   syscall: 'listen',
+2026-04-14 21:08:50:   address: '0.0.0.0',
+2026-04-14 21:08:50:   port: 7000
+2026-04-14 21:08:50: }
+2026-04-14 21:08:50: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:50:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:50:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:50:     at node:net:2274:7
+2026-04-14 21:08:50:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:50:   code: 'EADDRINUSE',
+2026-04-14 21:08:50:   errno: -98,
+2026-04-14 21:08:50:   syscall: 'listen',
+2026-04-14 21:08:50:   address: '0.0.0.0',
+2026-04-14 21:08:50:   port: 7000
+2026-04-14 21:08:50: }
+2026-04-14 21:08:51: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:51:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:51:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:51:     at node:net:2274:7
+2026-04-14 21:08:51:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:51:   code: 'EADDRINUSE',
+2026-04-14 21:08:51:   errno: -98,
+2026-04-14 21:08:51:   syscall: 'listen',
+2026-04-14 21:08:51:   address: '0.0.0.0',
+2026-04-14 21:08:51:   port: 7000
+2026-04-14 21:08:51: }
+2026-04-14 21:08:51: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:51:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:51:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:51:     at node:net:2274:7
+2026-04-14 21:08:51:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:51:   code: 'EADDRINUSE',
+2026-04-14 21:08:51:   errno: -98,
+2026-04-14 21:08:51:   syscall: 'listen',
+2026-04-14 21:08:51:   address: '0.0.0.0',
+2026-04-14 21:08:51:   port: 7000
+2026-04-14 21:08:51: }
+2026-04-14 21:08:52: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:52:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:52:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:52:     at node:net:2274:7
+2026-04-14 21:08:52:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:52:   code: 'EADDRINUSE',
+2026-04-14 21:08:52:   errno: -98,
+2026-04-14 21:08:52:   syscall: 'listen',
+2026-04-14 21:08:52:   address: '0.0.0.0',
+2026-04-14 21:08:52:   port: 7000
+2026-04-14 21:08:52: }
+2026-04-14 21:08:52: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:52:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:52:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:52:     at node:net:2274:7
+2026-04-14 21:08:52:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:52:   code: 'EADDRINUSE',
+2026-04-14 21:08:52:   errno: -98,
+2026-04-14 21:08:52:   syscall: 'listen',
+2026-04-14 21:08:52:   address: '0.0.0.0',
+2026-04-14 21:08:52:   port: 7000
+2026-04-14 21:08:52: }
+2026-04-14 21:08:53: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:53:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:53:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:53:     at node:net:2274:7
+2026-04-14 21:08:53:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:53:   code: 'EADDRINUSE',
+2026-04-14 21:08:53:   errno: -98,
+2026-04-14 21:08:53:   syscall: 'listen',
+2026-04-14 21:08:53:   address: '0.0.0.0',
+2026-04-14 21:08:53:   port: 7000
+2026-04-14 21:08:53: }
+2026-04-14 21:08:53: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:53:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:53:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:53:     at node:net:2274:7
+2026-04-14 21:08:53:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:53:   code: 'EADDRINUSE',
+2026-04-14 21:08:53:   errno: -98,
+2026-04-14 21:08:53:   syscall: 'listen',
+2026-04-14 21:08:53:   address: '0.0.0.0',
+2026-04-14 21:08:53:   port: 7000
+2026-04-14 21:08:53: }
+2026-04-14 21:08:54: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:54:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:54:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:54:     at node:net:2274:7
+2026-04-14 21:08:54:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:54:   code: 'EADDRINUSE',
+2026-04-14 21:08:54:   errno: -98,
+2026-04-14 21:08:54:   syscall: 'listen',
+2026-04-14 21:08:54:   address: '0.0.0.0',
+2026-04-14 21:08:54:   port: 7000
+2026-04-14 21:08:54: }
+2026-04-14 21:08:54: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:54:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:54:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:54:     at node:net:2274:7
+2026-04-14 21:08:54:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:54:   code: 'EADDRINUSE',
+2026-04-14 21:08:54:   errno: -98,
+2026-04-14 21:08:54:   syscall: 'listen',
+2026-04-14 21:08:54:   address: '0.0.0.0',
+2026-04-14 21:08:54:   port: 7000
+2026-04-14 21:08:54: }
+2026-04-14 21:08:55: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:55:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:55:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:55:     at node:net:2274:7
+2026-04-14 21:08:55:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:55:   code: 'EADDRINUSE',
+2026-04-14 21:08:55:   errno: -98,
+2026-04-14 21:08:55:   syscall: 'listen',
+2026-04-14 21:08:55:   address: '0.0.0.0',
+2026-04-14 21:08:55:   port: 7000
+2026-04-14 21:08:55: }
+2026-04-14 21:08:55: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:55:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:55:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:55:     at node:net:2274:7
+2026-04-14 21:08:55:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:55:   code: 'EADDRINUSE',
+2026-04-14 21:08:55:   errno: -98,
+2026-04-14 21:08:55:   syscall: 'listen',
+2026-04-14 21:08:55:   address: '0.0.0.0',
+2026-04-14 21:08:55:   port: 7000
+2026-04-14 21:08:55: }
+2026-04-14 21:08:56: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:56:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:56:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:56:     at node:net:2274:7
+2026-04-14 21:08:56:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:56:   code: 'EADDRINUSE',
+2026-04-14 21:08:56:   errno: -98,
+2026-04-14 21:08:56:   syscall: 'listen',
+2026-04-14 21:08:56:   address: '0.0.0.0',
+2026-04-14 21:08:56:   port: 7000
+2026-04-14 21:08:56: }
+2026-04-14 21:08:56: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:56:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:56:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:56:     at node:net:2274:7
+2026-04-14 21:08:56:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:56:   code: 'EADDRINUSE',
+2026-04-14 21:08:56:   errno: -98,
+2026-04-14 21:08:56:   syscall: 'listen',
+2026-04-14 21:08:56:   address: '0.0.0.0',
+2026-04-14 21:08:56:   port: 7000
+2026-04-14 21:08:56: }
+2026-04-14 21:08:57: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:57:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:57:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:57:     at node:net:2274:7
+2026-04-14 21:08:57:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:57:   code: 'EADDRINUSE',
+2026-04-14 21:08:57:   errno: -98,
+2026-04-14 21:08:57:   syscall: 'listen',
+2026-04-14 21:08:57:   address: '0.0.0.0',
+2026-04-14 21:08:57:   port: 7000
+2026-04-14 21:08:57: }
+2026-04-14 21:08:57: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:57:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:57:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:57:     at node:net:2274:7
+2026-04-14 21:08:57:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:57:   code: 'EADDRINUSE',
+2026-04-14 21:08:57:   errno: -98,
+2026-04-14 21:08:57:   syscall: 'listen',
+2026-04-14 21:08:57:   address: '0.0.0.0',
+2026-04-14 21:08:57:   port: 7000
+2026-04-14 21:08:57: }
+2026-04-14 21:08:58: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:58:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:58:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:58:     at node:net:2274:7
+2026-04-14 21:08:58:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:58:   code: 'EADDRINUSE',
+2026-04-14 21:08:58:   errno: -98,
+2026-04-14 21:08:58:   syscall: 'listen',
+2026-04-14 21:08:58:   address: '0.0.0.0',
+2026-04-14 21:08:58:   port: 7000
+2026-04-14 21:08:58: }
+2026-04-14 21:08:58: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:58:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:58:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:58:     at node:net:2274:7
+2026-04-14 21:08:58:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:58:   code: 'EADDRINUSE',
+2026-04-14 21:08:58:   errno: -98,
+2026-04-14 21:08:58:   syscall: 'listen',
+2026-04-14 21:08:58:   address: '0.0.0.0',
+2026-04-14 21:08:58:   port: 7000
+2026-04-14 21:08:58: }
+2026-04-14 21:08:59: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:59:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:59:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:59:     at node:net:2274:7
+2026-04-14 21:08:59:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:59:   code: 'EADDRINUSE',
+2026-04-14 21:08:59:   errno: -98,
+2026-04-14 21:08:59:   syscall: 'listen',
+2026-04-14 21:08:59:   address: '0.0.0.0',
+2026-04-14 21:08:59:   port: 7000
+2026-04-14 21:08:59: }
+2026-04-14 21:08:59: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:08:59:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:08:59:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:08:59:     at node:net:2274:7
+2026-04-14 21:08:59:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:08:59:   code: 'EADDRINUSE',
+2026-04-14 21:08:59:   errno: -98,
+2026-04-14 21:08:59:   syscall: 'listen',
+2026-04-14 21:08:59:   address: '0.0.0.0',
+2026-04-14 21:08:59:   port: 7000
+2026-04-14 21:08:59: }
+2026-04-14 21:09:00: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:09:00:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:09:00:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:09:00:     at node:net:2274:7
+2026-04-14 21:09:00:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:09:00:   code: 'EADDRINUSE',
+2026-04-14 21:09:00:   errno: -98,
+2026-04-14 21:09:00:   syscall: 'listen',
+2026-04-14 21:09:00:   address: '0.0.0.0',
+2026-04-14 21:09:00:   port: 7000
+2026-04-14 21:09:00: }
+2026-04-14 21:09:00: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:09:00:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:09:00:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:09:00:     at node:net:2274:7
+2026-04-14 21:09:00:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:09:00:   code: 'EADDRINUSE',
+2026-04-14 21:09:00:   errno: -98,
+2026-04-14 21:09:00:   syscall: 'listen',
+2026-04-14 21:09:00:   address: '0.0.0.0',
+2026-04-14 21:09:00:   port: 7000
+2026-04-14 21:09:00: }
+2026-04-14 21:09:01: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:09:01:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:09:01:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:09:01:     at node:net:2274:7
+2026-04-14 21:09:01:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:09:01:   code: 'EADDRINUSE',
+2026-04-14 21:09:01:   errno: -98,
+2026-04-14 21:09:01:   syscall: 'listen',
+2026-04-14 21:09:01:   address: '0.0.0.0',
+2026-04-14 21:09:01:   port: 7000
+2026-04-14 21:09:01: }
+2026-04-14 21:09:01: Error: listen EADDRINUSE: address already in use 0.0.0.0:7000
+2026-04-14 21:09:01:     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+2026-04-14 21:09:01:     at listenInCluster (node:net:2065:12)
+2026-04-14 21:09:01:     at node:net:2274:7
+2026-04-14 21:09:01:     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+2026-04-14 21:09:01:   code: 'EADDRINUSE',
+2026-04-14 21:09:01:   errno: -98,
+2026-04-14 21:09:01:   syscall: 'listen',
+2026-04-14 21:09:01:   address: '0.0.0.0',
+2026-04-14 21:09:01:   port: 7000
+2026-04-14 21:09:01: }
+2026-04-14 21:10:51: (node:30410) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 21:10:51: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 21:25:40: (node:9157) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 21:25:40: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 22:11:17: (node:19763) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 22:11:17: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 23:29:45: (node:23501) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 23:29:45: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 23:30:07: [jac.red] sortJacredResults is not defined
+2026-04-14 23:30:15: [jac.red] sortJacredResults is not defined
+2026-04-14 23:30:22: [jac.red] sortJacredResults is not defined
+2026-04-14 23:49:37: (node:30898) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 23:49:37: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-14 23:56:08: (node:2771) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-14 23:56:08: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 00:08:30: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:30:             path.
+2026-04-15 00:08:30:             ^^^^
+2026-04-15 00:08:30: 
+2026-04-15 00:08:30: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:30:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:30:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:30:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:30:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:30:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:30:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:30:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:30:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:30:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:30:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:31:             path.
+2026-04-15 00:08:31:             ^^^^
+2026-04-15 00:08:31: 
+2026-04-15 00:08:31: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:31:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:31:             path.
+2026-04-15 00:08:31:             ^^^^
+2026-04-15 00:08:31: 
+2026-04-15 00:08:31: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:31:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:31:             path.
+2026-04-15 00:08:31:             ^^^^
+2026-04-15 00:08:31: 
+2026-04-15 00:08:31: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:31:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:31:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:31:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:32:             path.
+2026-04-15 00:08:32:             ^^^^
+2026-04-15 00:08:32: 
+2026-04-15 00:08:32: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:32:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:32:             path.
+2026-04-15 00:08:32:             ^^^^
+2026-04-15 00:08:32: 
+2026-04-15 00:08:32: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:32:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:32:             path.
+2026-04-15 00:08:32:             ^^^^
+2026-04-15 00:08:32: 
+2026-04-15 00:08:32: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:32:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:32:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:32:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:33:             path.
+2026-04-15 00:08:33:             ^^^^
+2026-04-15 00:08:33: 
+2026-04-15 00:08:33: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:33:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:33:             path.
+2026-04-15 00:08:33:             ^^^^
+2026-04-15 00:08:33: 
+2026-04-15 00:08:33: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:33:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:33:             path.
+2026-04-15 00:08:33:             ^^^^
+2026-04-15 00:08:33: 
+2026-04-15 00:08:33: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:33:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:33:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:33:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:34:             path.
+2026-04-15 00:08:34:             ^^^^
+2026-04-15 00:08:34: 
+2026-04-15 00:08:34: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:34:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:34:             path.
+2026-04-15 00:08:34:             ^^^^
+2026-04-15 00:08:34: 
+2026-04-15 00:08:34: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:34:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:34:             path.
+2026-04-15 00:08:34:             ^^^^
+2026-04-15 00:08:34: 
+2026-04-15 00:08:34: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:34:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:34:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:34:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:34:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:34:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:34:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:35: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:35:             path.
+2026-04-15 00:08:35:             ^^^^
+2026-04-15 00:08:35: 
+2026-04-15 00:08:35: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:35:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:35:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:35:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:35:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:35:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:35:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:35:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:35:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:35:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:35:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:35: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:35:             path.
+2026-04-15 00:08:35:             ^^^^
+2026-04-15 00:08:35: 
+2026-04-15 00:08:35: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:35:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:35:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:35:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:35:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:35:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:35:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:35:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:35:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:35:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:35:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:36: /data/data/com.termux/files/home/stremio-addon/index.js:316
+2026-04-15 00:08:36:             path.
+2026-04-15 00:08:36:             ^^^^
+2026-04-15 00:08:36: 
+2026-04-15 00:08:36: SyntaxError: Unexpected identifier 'path'
+2026-04-15 00:08:36:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:08:36:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:08:36:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:36:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:36:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:08:36:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:08:36:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:08:36:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:08:36:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:08:36:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:55: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:55: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:55:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:55: 
+2026-04-15 00:13:55: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:55:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:55:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:55:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:55:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:56: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:56:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:56: 
+2026-04-15 00:13:56: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:56: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:56:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:56: 
+2026-04-15 00:13:56: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:56: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:56:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:56: 
+2026-04-15 00:13:56: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:57: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:57:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:57: 
+2026-04-15 00:13:57: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:57: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:57:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:57: 
+2026-04-15 00:13:57: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:57: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:57:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:57: 
+2026-04-15 00:13:57: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:58: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:58:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:58: 
+2026-04-15 00:13:58: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:58:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:58: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:58:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:58: 
+2026-04-15 00:13:58: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:58:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:58: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:58:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:58: 
+2026-04-15 00:13:58: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:58:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:58:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:58:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:59: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:59:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:59: 
+2026-04-15 00:13:59: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:59:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:59: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:59:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:59: 
+2026-04-15 00:13:59: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:59:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:13:59: function sortJacredResults(items, sortBy) {
+2026-04-15 00:13:59:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:13:59: 
+2026-04-15 00:13:59: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:13:59:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:13:59:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:13:59:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:13:59:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:13:59:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:13:59:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:14:00: function sortJacredResults(items, sortBy) {
+2026-04-15 00:14:00:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:14:00: 
+2026-04-15 00:14:00: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:14:00:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:14:00: function sortJacredResults(items, sortBy) {
+2026-04-15 00:14:00:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:14:00: 
+2026-04-15 00:14:00: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:14:00:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00: /data/data/com.termux/files/home/stremio-addon/index.js:271
+2026-04-15 00:14:00: function sortJacredResults(items, sortBy) {
+2026-04-15 00:14:00:          ^^^^^^^^^^^^^^^^^
+2026-04-15 00:14:00: 
+2026-04-15 00:14:00: SyntaxError: Unexpected identifier 'sortJacredResults'
+2026-04-15 00:14:00:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:14:00:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:14:00:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:14:00:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:14:00:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:14:00:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:16: }
+2026-04-15 00:15:16: ^
+2026-04-15 00:15:16: 
+2026-04-15 00:15:16: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:16:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:16: }
+2026-04-15 00:15:16: ^
+2026-04-15 00:15:16: 
+2026-04-15 00:15:16: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:16:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:16: }
+2026-04-15 00:15:16: ^
+2026-04-15 00:15:16: 
+2026-04-15 00:15:16: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:16:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:16:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:16:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:16:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:16:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:16:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:17: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:17: }
+2026-04-15 00:15:17: ^
+2026-04-15 00:15:17: 
+2026-04-15 00:15:17: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:17:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:17:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:17:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:17:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:17:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:17:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:17:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:17:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:17:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:17:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:17: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:17: }
+2026-04-15 00:15:17: ^
+2026-04-15 00:15:17: 
+2026-04-15 00:15:17: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:17:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:17:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:17:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:17:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:17:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:17:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:17:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:17:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:17:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:17:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:18: }
+2026-04-15 00:15:18: ^
+2026-04-15 00:15:18: 
+2026-04-15 00:15:18: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:18:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:18: }
+2026-04-15 00:15:18: ^
+2026-04-15 00:15:18: 
+2026-04-15 00:15:18: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:18:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:18: }
+2026-04-15 00:15:18: ^
+2026-04-15 00:15:18: 
+2026-04-15 00:15:18: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:18:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:18:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:18:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:18:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:18:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:18:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:19: }
+2026-04-15 00:15:19: ^
+2026-04-15 00:15:19: 
+2026-04-15 00:15:19: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:19:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:19: }
+2026-04-15 00:15:19: ^
+2026-04-15 00:15:19: 
+2026-04-15 00:15:19: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:19:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:19: }
+2026-04-15 00:15:19: ^
+2026-04-15 00:15:19: 
+2026-04-15 00:15:19: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:19:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:19:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:19:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:19:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:19:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:19:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:20: }
+2026-04-15 00:15:20: ^
+2026-04-15 00:15:20: 
+2026-04-15 00:15:20: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:20:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:20: }
+2026-04-15 00:15:20: ^
+2026-04-15 00:15:20: 
+2026-04-15 00:15:20: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:20:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:20: }
+2026-04-15 00:15:20: ^
+2026-04-15 00:15:20: 
+2026-04-15 00:15:20: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:20:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:20:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:20:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:20:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:20:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:20:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:21: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:21: }
+2026-04-15 00:15:21: ^
+2026-04-15 00:15:21: 
+2026-04-15 00:15:21: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:21:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:21:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:21:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:21:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:21:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:21:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:21:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:21:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:21:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:21:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:21: /data/data/com.termux/files/home/stremio-addon/index.js:211
+2026-04-15 00:15:21: }
+2026-04-15 00:15:21: ^
+2026-04-15 00:15:21: 
+2026-04-15 00:15:21: SyntaxError: Unexpected token '}'
+2026-04-15 00:15:21:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 00:15:21:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 00:15:21:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:21:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:21:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:15:21:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 00:15:21:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 00:15:21:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 00:15:21:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 00:15:21:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 00:25:44: (node:12562) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 00:25:44: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 00:46:25: (node:17269) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 00:46:25: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 01:05:53: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:53: }
+2026-04-15 01:05:53: ^
+2026-04-15 01:05:53: 
+2026-04-15 01:05:53: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:53:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:53:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:53:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:53:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:53:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:53:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:53:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:53:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:53:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:53:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:54: }
+2026-04-15 01:05:54: ^
+2026-04-15 01:05:54: 
+2026-04-15 01:05:54: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:54:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:54: }
+2026-04-15 01:05:54: ^
+2026-04-15 01:05:54: 
+2026-04-15 01:05:54: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:54:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:54: }
+2026-04-15 01:05:54: ^
+2026-04-15 01:05:54: 
+2026-04-15 01:05:54: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:54:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:54: }
+2026-04-15 01:05:54: ^
+2026-04-15 01:05:54: 
+2026-04-15 01:05:54: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:54:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:54:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:54:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:54:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:54:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:54:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:55: }
+2026-04-15 01:05:55: ^
+2026-04-15 01:05:55: 
+2026-04-15 01:05:55: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:55:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:55: }
+2026-04-15 01:05:55: ^
+2026-04-15 01:05:55: 
+2026-04-15 01:05:55: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:55:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:55: }
+2026-04-15 01:05:55: ^
+2026-04-15 01:05:55: 
+2026-04-15 01:05:55: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:55:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:55:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:55:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:55:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:55:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:55:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:56: }
+2026-04-15 01:05:56: ^
+2026-04-15 01:05:56: 
+2026-04-15 01:05:56: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:56: }
+2026-04-15 01:05:56: ^
+2026-04-15 01:05:56: 
+2026-04-15 01:05:56: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:56: }
+2026-04-15 01:05:56: ^
+2026-04-15 01:05:56: 
+2026-04-15 01:05:56: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:56: }
+2026-04-15 01:05:56: ^
+2026-04-15 01:05:56: 
+2026-04-15 01:05:56: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:56:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:56:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:56:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:56:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:56:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:56:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:57: }
+2026-04-15 01:05:57: ^
+2026-04-15 01:05:57: 
+2026-04-15 01:05:57: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:57: }
+2026-04-15 01:05:57: ^
+2026-04-15 01:05:57: 
+2026-04-15 01:05:57: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:57: }
+2026-04-15 01:05:57: ^
+2026-04-15 01:05:57: 
+2026-04-15 01:05:57: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:57:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:57:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:57:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:57:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:57:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:57:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:58: /data/data/com.termux/files/home/stremio-addon/index.js:511
+2026-04-15 01:05:58: }
+2026-04-15 01:05:58: ^
+2026-04-15 01:05:58: 
+2026-04-15 01:05:58: SyntaxError: Unexpected token '}'
+2026-04-15 01:05:58:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 01:05:58:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 01:05:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:05:58:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 01:05:58:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 01:05:58:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 01:05:58:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 01:05:58:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 01:30:51: (node:28386) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 01:30:51: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 01:43:10: (node:32559) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 01:43:10: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 01:50:53: (node:2928) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 01:50:53: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 01:59:35: (node:4918) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 01:59:35: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 05:57:57: (node:17716) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 05:57:57: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 06:51:41: (node:23456) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 06:51:41: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 07:20:09: (node:5064) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 07:20:09: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 10:03:16: (node:17414) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-04-15 10:03:16: (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-15 10:03:41: [jac.red] (arr || []).forEach is not a function
+2026-04-15 10:07:24: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:24: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:24:      ^^^
+2026-04-15 10:07:24: 
+2026-04-15 10:07:24: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:24:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:24:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:24:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:24:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:24:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:24:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:24:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:24:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:24:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:24:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:24: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:24: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:24:      ^^^
+2026-04-15 10:07:24: 
+2026-04-15 10:07:24: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:24:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:24:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:24:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:24:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:24:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:24:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:24:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:24:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:24:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:24:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:25: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:25: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:25:      ^^^
+2026-04-15 10:07:25: 
+2026-04-15 10:07:25: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:25:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:25:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:25:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:25:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:25:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:25:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:25:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:25:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:25:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:25:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:25: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:25: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:25:      ^^^
+2026-04-15 10:07:25: 
+2026-04-15 10:07:25: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:25:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:25:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:25:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:25:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:25:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:25:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:25:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:25:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:25:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:25:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:26: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:26: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:26:      ^^^
+2026-04-15 10:07:26: 
+2026-04-15 10:07:26: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:26:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:26:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:26:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:26:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:26:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:26:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:26:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:26:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:26:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:26:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:27: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:27: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:27:      ^^^
+2026-04-15 10:07:27: 
+2026-04-15 10:07:27: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:27:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:27:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:27:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:27:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:27:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:27:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:27:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:27:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:27:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:27:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:27: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:27: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:27:      ^^^
+2026-04-15 10:07:27: 
+2026-04-15 10:07:27: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:27:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:27:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:27:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:27:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:27:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:27:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:27:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:27:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:27:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:27:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:28: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:28: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:28:      ^^^
+2026-04-15 10:07:28: 
+2026-04-15 10:07:28: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:28:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:28:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:28:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:28:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:28:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:28:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:28:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:28:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:28:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:28:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:29: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:29: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:29:      ^^^
+2026-04-15 10:07:29: 
+2026-04-15 10:07:29: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:29:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:29:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:29:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:29:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:29:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:29:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:29:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:29:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:29:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:29:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:29: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:29: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:29:      ^^^
+2026-04-15 10:07:29: 
+2026-04-15 10:07:29: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:29:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:29:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:29:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:29:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:29:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:29:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:29:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:29:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:29:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:29:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:30: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:30: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:30:      ^^^
+2026-04-15 10:07:30: 
+2026-04-15 10:07:30: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:30:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:30:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:30:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:30:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:30:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:30:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:30:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:30:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:30:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:30:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:31: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:31: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:31:      ^^^
+2026-04-15 10:07:31: 
+2026-04-15 10:07:31: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:31:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:31:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:31:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:31:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:31: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:31: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:31:      ^^^
+2026-04-15 10:07:31: 
+2026-04-15 10:07:31: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:31:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:31:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:31:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:31:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:31:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:31:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:31:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:32: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:32: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:32:      ^^^
+2026-04-15 10:07:32: 
+2026-04-15 10:07:32: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:32:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:32:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:32:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:32:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:32: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:32: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:32:      ^^^
+2026-04-15 10:07:32: 
+2026-04-15 10:07:32: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:32:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:32:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:32:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:32:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:32:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:32:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:32:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:33: /data/data/com.termux/files/home/stremio-addon/index.js:1
+2026-04-15 10:07:33: Chào bạn, lỗi này rất rõ ràng, cảm ơn bạn đã gửi log.
+2026-04-15 10:07:33:      ^^^
+2026-04-15 10:07:33: 
+2026-04-15 10:07:33: SyntaxError: Unexpected identifier 'bạn'
+2026-04-15 10:07:33:     at wrapSafe (node:internal/modules/cjs/loader:1762:18)
+2026-04-15 10:07:33:     at Module._compile (node:internal/modules/cjs/loader:1803:20)
+2026-04-15 10:07:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
+2026-04-15 10:07:33:     at Object.<anonymous> (/data/data/com.termux/files/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+2026-04-15 10:07:33:     at Module._compile (node:internal/modules/cjs/loader:1829:14)
+2026-04-15 10:07:33:     at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+2026-04-15 10:07:33:     at Module.load (node:internal/modules/cjs/loader:1552:32)
+2026-04-15 10:07:33:     at Module._load (node:internal/modules/cjs/loader:1354:12)
