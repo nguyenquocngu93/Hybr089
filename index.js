@@ -112,11 +112,11 @@ function buildTorrentioBase(cfg) {
 function buildManifest(cfg, configStr, pub) {
  return {
  id: 'com.hybrid.addon',
- version: '6.8.0',
+ version: '6.9.0',
  name: 'Hybrid Addon',
  description: 'Torrentio + jac.red + Knaben + Magnetz',
  resources: ['stream'],
- types: ['movie','series'],
+ types: ['movie','series','anime'],
  idPrefixes: ['tt'],
  behaviorHints: {
  configurable: true,
@@ -129,7 +129,7 @@ function buildManifest(cfg, configStr, pub) {
 function getRuTitleFromTMDb(imdbId, type) {
  var cacheKey = imdbId + '_ru';
  if (TMDB_CACHE[cacheKey]) return Promise.resolve(TMDB_CACHE[cacheKey]);
- var metaType = (type === 'series') ? 'tv' : 'movie';
+ var metaType = (type === 'series' || type === 'anime') ? 'tv' : 'movie';
  return fetch('https://api.themoviedb.org/3/find/' + imdbId + '?api_key=' + TMDB_API_KEY + '&external_source=imdb_id', { timeout: 120000 })
  .then(function(r) { return r.ok ? r.json() : {}; })
  .then(function(data) {
@@ -153,7 +153,7 @@ function getRuTitleFromTMDb(imdbId, type) {
 function getOriginalTitleFromTMDb(imdbId, type) {
  var cacheKey = imdbId + '_orig';
  if (TMDB_CACHE[cacheKey]) return Promise.resolve(TMDB_CACHE[cacheKey]);
- var metaType = (type === 'series') ? 'tv' : 'movie';
+ var metaType = (type === 'series' || type === 'anime') ? 'tv' : 'movie';
  return fetch('https://api.themoviedb.org/3/find/' + imdbId + '?api_key=' + TMDB_API_KEY + '&external_source=imdb_id', { timeout: 120000 })
  .then(function(r) { return r.ok ? r.json() : {}; })
  .then(function(data) {
@@ -297,8 +297,8 @@ function searchJacred(imdbId, type, maxResults, sortBy, apiUrl) {
  var key = hashMatch ? hashMatch[1].toLowerCase() : t.magnet;
  if (!seen.has(key)) {
  var types = t.types || [], seasons = t.seasons || [];
- if (type === 'movie' && (types.includes('series') || seasons.length > 0)) continue;
- if (type === 'series' && types.includes('movie') && seasons.length === 0) continue;
+ if ((type === 'movie') && (types.includes('series') || types.includes('anime') || seasons.length > 0)) continue;
+ if ((type === 'series' || type === 'anime') && types.includes('movie') && seasons.length === 0) continue;
  
  seen.set(key, true);
  var qualityText = ''; if (t.quality === 2160) qualityText = '4K'; else if (t.quality === 1080) qualityText = '1080p'; else if (t.quality === 720) qualityText = '720p'; else if (t.quality === 480) qualityText = '480p'; else if (t.quality) qualityText = t.quality + 'p';
@@ -332,9 +332,9 @@ function searchKnaben(query, maxResults, type, preferPack, season, episode) {
     var baseUrl = 'https://knaben.org/search/';
     var filterSegment = '0/1/bytes';
     if (type === 'movie') filterSegment = '3000000/1/bytes';
-    else if (type === 'series') filterSegment = '2000000/1/bytes';
+    else if (type === 'series' || type === 'anime') filterSegment = '2000000/1/bytes';
     var finalQuery = query;
-    if (type === 'series' && !preferPack && season && episode) {
+    if ((type === 'series' || type === 'anime') && !preferPack && season && episode) {
         var s = String(season).padStart(2, '0');
         var e = String(episode).padStart(2, '0');
         finalQuery = query + ' S' + s + 'E' + e;
@@ -483,6 +483,10 @@ function handleStream(type, id, cfg, res, pub) {
  var minSize = parseFloat(cfg.sizeMinGB) || 0;
  var maxSize = parseFloat(cfg.sizeMaxGB) || 100;
  
+ // Kiểm tra có phải anime không
+ var isAnime = (type === 'anime' || cfg.animeMode);
+ var seriesType = (type === 'series' || type === 'anime');
+ 
  // ===================== KNABEN =====================
  if (cfg.knabenEnabled) {
  Promise.all([
@@ -506,7 +510,7 @@ function handleStream(type, id, cfg, res, pub) {
  var title = t.title;
  var episodeMatch = title.match(/\bS(\d{1,2})\s*E(\d{1,2})\b/i);
  var isSingleEpisode = episodeMatch !== null;
- var isPack = (type === 'series' && !isSingleEpisode);
+ var isPack = (seriesType && !isSingleEpisode);
  
  if (isPack && season > 0) {
  var sPad = String(season).padStart(2, '0');
@@ -528,7 +532,7 @@ function handleStream(type, id, cfg, res, pub) {
  }
  
  var sizeGB = t.sizeGB.toFixed(2);
- var badge = type === 'series' ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
+ var badge = seriesType ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
  var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + '\n📡 ' + t.tracker;
  
  if (type === 'movie') {
@@ -561,7 +565,7 @@ function handleStream(type, id, cfg, res, pub) {
  if (season > 0) {
  query = query + ' S' + String(season).padStart(2, '0');
  }
- console.log('[Magnetz] Search: "' + query + '" (series: tên + Sxx)');
+ console.log('[Magnetz] Search: "' + query + '" (series/anime: tên + Sxx)');
  }
  
  return searchMagnetz(query, cfg.maxResults || 30, type, cfg.preferPack, season, episode);
@@ -578,7 +582,7 @@ function handleStream(type, id, cfg, res, pub) {
  var title = t.title;
  var episodeMatch = title.match(/\bS(\d{1,2})\s*E(\d{1,2})\b/i);
  var isSingleEpisode = episodeMatch !== null;
- var isPack = (type === 'series' && !isSingleEpisode);
+ var isPack = (seriesType && !isSingleEpisode);
  
  if (isPack && season > 0) {
  var sPad = String(season).padStart(2, '0');
@@ -600,7 +604,7 @@ function handleStream(type, id, cfg, res, pub) {
  }
  
  var sizeGB = t.sizeGB.toFixed(2);
- var badge = type === 'series' ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
+ var badge = seriesType ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
  var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + '\n📡 ' + t.tracker;
  
  if (type === 'movie') {
@@ -626,7 +630,7 @@ function handleStream(type, id, cfg, res, pub) {
  if (maxSize < 100 && t.sizeGB > maxSize) return;
  var title = t.title;
  
- if (type === 'series' && season > 0) {
+ if (seriesType && season > 0) {
  var sPad = String(season).padStart(2, '0');
  
  // Pack trọn bộ -> hiện ở tất cả season
@@ -634,15 +638,31 @@ function handleStream(type, id, cfg, res, pub) {
  var isCompletePack = completePackPattern.test(title);
  
  if (!isCompletePack) {
- // Pattern cho season cụ thể
  var singleSeasonPattern = new RegExp('S' + sPad + '(?:[^\\d]|$)|Season\\s*' + season + '(?:[^\\d]|$)|сезон\\s*' + season + '(?:[^\\d]|$)|' + season + '\\s*сезон', 'i');
  var anySeasonPattern = /S\d{1,2}(?:[^\d]|$)|Season\s*\d|сезон\s*\d|\d+\s*сезон/gi;
  var hasSeasonMention = anySeasonPattern.test(title);
  
+ if (isAnime) {
+ // ANIME / ANIME MODE: Cho phép pack không Sxx (vd: [13+1 из...], 1-14 серии)
+ var noSeasonSeriesPattern = /\[\d+\+?\d*\s*(из|of|ep|сери)/i;
+ var isSeriesPack = noSeasonSeriesPattern.test(title) || title.indexOf('серии') !== -1 || title.indexOf('сери') !== -1;
+ 
+ if (hasSeasonMention) {
+ if (!singleSeasonPattern.test(title) && !isCompletePack) return;
+ } else if (isSeriesPack) {
+ // OK - anime pack
+ } else {
+ // Có thể là movie trong anime series -> bỏ qua
+ if (/фильм|Movie|Gekijouban/i.test(title)) return;
+ // Còn lại cho qua (pack không ghi season)
+ }
+ } else {
+ // TV SHOWS: Lọc chặt
  if (hasSeasonMention) {
  if (!singleSeasonPattern.test(title)) return;
  } else {
- if (!isCompletePack) return;
+ return;
+ }
  }
  }
  }
@@ -673,7 +693,7 @@ function handleStream(type, id, cfg, res, pub) {
  }
 }
 
-// ===================== CONFIG PAGE (TỐI GIẢN CSS) =====================
+// ===================== CONFIG PAGE (TỐI GIẢN) =====================
 function buildConfigPage(cfg, configStr, pub) {
  var installUrl = pub + (configStr ? '/' + configStr : '') + '/manifest.json';
  var stremioUrl = 'stremio://' + installUrl.replace(/^https?:\/\//, '');
@@ -682,7 +702,7 @@ function buildConfigPage(cfg, configStr, pub) {
  var domainOptions = '';
  for (var key in JAC_RED_DOMAINS) domainOptions += '<option value="' + key + '"' + (jacredDomain === key ? ' selected' : '') + '>' + key + '</option>';
  
- var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v6.8.0</title>'
+ var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v6.9.0</title>'
  + '<style>'
  + '*{margin:0;padding:0;box-sizing:border-box}'
  + 'body{background:#0a0a14;color:#e0e0f0;font-family:system-ui,sans-serif;padding:16px;font-size:14px}'
@@ -732,26 +752,23 @@ function buildConfigPage(cfg, configStr, pub) {
  + '.divider{height:1px;background:#1e1e40;margin:10px 0}'
  + '.footer{text-align:center;color:#555;font-size:11px;margin-top:16px;padding:10px}'
  + '</style></head><body><div class="wrap">'
- + '<h1>Hybrid Addon</h1><p class="sub">v6.8.0 | Torrentio · jac.red · Knaben · Magnetz</p>'
+ + '<h1>Hybrid Addon</h1><p class="sub">v6.9.0 | Torrentio · jac.red · Knaben · Magnetz</p>'
  
- // TORRENTIO CONFIG
  + '<div class="card"><h2>Torrentio Config</h2>'
  + '<label>Paste Torrentio link</label>'
  + '<textarea id="configLink" placeholder="https://torrentio.strem.fun/.../manifest.json"></textarea>'
  + '<button class="btn btn-ghost btn-full" onclick="applyTIO()">Apply Torrentio</button>'
  + '</div>'
  
- // SOURCES
  + '<div class="card"><h2>Sources</h2>'
  + '<div class="trow"><div class="trow-info"><div class="trow-name">Torrentio</div><div class="trow-sub">Multi-tracker</div></div><label class="sw"><input type="checkbox" id="torrentioEnabled"' + (cfg.torrentioEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
  + '<div class="trow"><div class="trow-info"><div class="trow-name">Knaben</div><div class="trow-sub">TPB, 1337x, YTS, Nyaa...</div></div><label class="sw"><input type="checkbox" id="knabenEnabled"' + (cfg.knabenEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
- + '<div class="trow"><div class="trow-info"><div class="trow-name">Magnetz</div><div class="trow-sub">Tên + Năm (movie) / Tên + Sxx (series)</div></div><label class="sw"><input type="checkbox" id="magnetzEnabled"' + (cfg.magnetzEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
- + '<div class="trow"><div class="trow-info"><div class="trow-name">jac.red</div><div class="trow-sub">Tên Nga + IMDb | Pack trọn bộ hiện tất cả season</div></div><label class="sw"><input type="checkbox" id="jacredEnabled"' + (cfg.jacredEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Magnetz</div><div class="trow-sub">Tên + Năm / Tên + Sxx</div></div><label class="sw"><input type="checkbox" id="magnetzEnabled"' + (cfg.magnetzEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">jac.red</div><div class="trow-sub">Tên Nga + IMDb | Anime: pack không Sxx</div></div><label class="sw"><input type="checkbox" id="jacredEnabled"' + (cfg.jacredEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
  + '<div class="divider"></div>'
  + '<label>JacRed Domain</label><select id="jacredDomain">' + domainOptions + '</select>'
  + '</div>'
  
- // TORRSERVER
  + '<div class="card"><h2>TorrServer</h2>'
  + '<label>URL</label>'
  + '<input type="text" id="tsUrl" value="' + (cfg.torrServerUrl || '') + '" placeholder="http://192.168.1.100:8090">'
@@ -759,7 +776,6 @@ function buildConfigPage(cfg, configStr, pub) {
  + '<div id="tsResult" class="test-box"></div>'
  + '</div>'
  
- // FILTERS
  + '<div class="card"><h2>Filters</h2>'
  + '<label>Sort by</label>'
  + '<div class="sort-row">'
@@ -767,7 +783,7 @@ function buildConfigPage(cfg, configStr, pub) {
  + '<div class="sort-btn' + (commonSort === 'seeds' ? ' on' : '') + '" onclick="setSort(\'seeds\',this)">Seeds</div>'
  + '<div class="sort-btn' + (commonSort === 'date' ? ' on' : '') + '" onclick="setSort(\'date\',this)">Newest</div>'
  + '</div><input type="hidden" id="commonSort" value="' + commonSort + '">'
- + '<div class="two-col"><div><label>Max Results</label><input type="number" id="maxResults" value="' + (cfg.maxResults || 30) + '" min="5" max="100"></div></div>'
+ + '<div class="two-col"><div><label>Max Results</label><input type="number" id="maxResults" value="' + (cfg.maxResults || 30) + '" min="5" max="2000"></div></div>'
  + '<div class="two-col"><div><label>Min (GB)</label><input type="number" id="minSize" value="' + (cfg.sizeMinGB || '') + '" placeholder="0" step="0.5"></div><div><label>Max (GB)</label><input type="number" id="maxSize" value="' + (cfg.sizeMaxGB || '') + '" placeholder="100" step="0.5"></div></div>'
  + '<label>Hide Quality</label>'
  + '<div class="qf-row">'
@@ -778,23 +794,20 @@ function buildConfigPage(cfg, configStr, pub) {
  + '</div>'
  + '</div>'
  
- // OPTIONS
  + '<div class="card"><h2>Options</h2>'
- + '<div class="trow"><div class="trow-info"><div class="trow-name">Prefer Pack</div><div class="trow-sub">Show packs instead of single episodes</div></div><label class="sw"><input type="checkbox" id="preferPack"' + (cfg.preferPack !== false ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
- + '<div class="trow"><div class="trow-info"><div class="trow-name">Anime Mode</div><div class="trow-sub">Optimize episode selection for anime</div></div><label class="sw"><input type="checkbox" id="animeMode"' + (cfg.animeMode ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Prefer Pack</div><div class="trow-sub">Show packs instead of episodes</div></div><label class="sw"><input type="checkbox" id="preferPack"' + (cfg.preferPack !== false ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Anime Mode</div><div class="trow-sub">Allow packs without Sxx pattern</div></div><label class="sw"><input type="checkbox" id="animeMode"' + (cfg.animeMode ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
  + '</div>'
  
- // GENERATE
  + '<button class="gen-btn" onclick="gen()">Generate & Update</button>'
  
- // INSTALL
  + '<div class="card"><h2>Install</h2>'
  + '<label>Manifest URL (click to copy)</label>'
  + '<div class="url-box" id="iurl" onclick="copyUrl()">' + installUrl + '</div>'
  + '<div class="btn-row"><button class="btn btn-ghost" onclick="copyUrl()">Copy</button><a class="btn btn-green" href="' + stremioUrl + '" id="slink">Install</a></div>'
  + '</div>'
  
- + '<div class="footer">Hybrid Addon v6.8.0 | fatcatQN</div>'
+ + '<div class="footer">Hybrid Addon v6.9.0 | fatcatQN</div>'
  + '</div>'
  
  + '<script>'
@@ -848,6 +861,7 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(PORT, '0.0.0.0', function() {
- console.log('\nHybrid Addon v6.8.0 : http://localhost:' + PORT);
- console.log('Configure: http://localhost:' + PORT + '/configure\n');
+ console.log('\nHybrid Addon v6.9.0 : http://localhost:' + PORT);
+ console.log('Configure: http://localhost:' + PORT + '/configure');
+ console.log('Types: movie, series, anime\n');
 });
