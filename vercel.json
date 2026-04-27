@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "stremio-addon.js",
+      "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "stremio-addon.js"
+      "dest": "index.js"
     }
   ]
 }
