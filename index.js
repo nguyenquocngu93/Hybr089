@@ -112,9 +112,9 @@ function buildTorrentioBase(cfg) {
 function buildManifest(cfg, configStr, pub) {
  return {
  id: 'com.hybrid.addon',
- version: '6.7.0',
- name: '🎬 Hybrid Addon',
- description: 'Torrentio + jac.red + Knaben + Magnetz → TorrServer | Made with love ❤️',
+ version: '6.8.0',
+ name: 'Hybrid Addon',
+ description: 'Torrentio + jac.red + Knaben + Magnetz',
  resources: ['stream'],
  types: ['movie','series'],
  idPrefixes: ['tt'],
@@ -138,12 +138,11 @@ function getRuTitleFromTMDb(imdbId, type) {
  var tmdbId = results[0].id;
  var releaseDate = results[0].release_date || results[0].first_air_date || '';
  var year = releaseDate ? releaseDate.substring(0, 4) : '';
- TMDB_CACHE[cacheKey + '_full'] = { year: year };
+ TMDB_CACHE[cacheKey + '_full'] = { year: year, origTitle: results[0].title || results[0].name || '' };
  return fetch('https://api.themoviedb.org/3/' + metaType + '/' + tmdbId + '?api_key=' + TMDB_API_KEY + '&language=ru', { timeout: 120000 })
  .then(function(r) { return r.ok ? r.json() : {}; })
  .then(function(d) {
  var ruTitle = (d.title || d.name || '').replace(/\s*\(\d{4}\)\s*$/, '').trim();
- console.log('[TMDb] ' + imdbId + ' → RU:"' + ruTitle + '" (' + year + ')');
  TMDB_CACHE[cacheKey] = ruTitle || null;
  return ruTitle || null;
  });
@@ -161,6 +160,9 @@ function getOriginalTitleFromTMDb(imdbId, type) {
  var results = data[metaType + '_results'] || [];
  if (results.length === 0) return null;
  var title = results[0].title || results[0].name || imdbId;
+ var releaseDate = results[0].release_date || results[0].first_air_date || '';
+ var year = releaseDate ? releaseDate.substring(0, 4) : '';
+ TMDB_CACHE[imdbId + '_year'] = year;
  TMDB_CACHE[cacheKey] = title;
  return title;
  })
@@ -283,9 +285,6 @@ function handlePlay(query, cfg, res) {
 // ===================== JACRED =====================
 function searchJacred(imdbId, type, maxResults, sortBy, apiUrl) {
  return getRuTitleFromTMDb(imdbId, type).then(function(ruTitle) {
- var cacheKey = imdbId + '_ru';
- var tmdbData = TMDB_CACHE[cacheKey + '_full'] || {};
- var expectedYear = tmdbData.year || '';
  var seen = new Map(), unique = [];
  
  function addResults(arr, sourceName) {
@@ -297,33 +296,28 @@ function searchJacred(imdbId, type, maxResults, sortBy, apiUrl) {
  var hashMatch = t.magnet.match(/btih:([a-fA-F0-9]{40})/i);
  var key = hashMatch ? hashMatch[1].toLowerCase() : t.magnet;
  if (!seen.has(key)) {
- var types = t.types || [], seasons = t.seasons || [], yearNum = parseInt(t.relased || t.released || t.related || '0') || 0;
+ var types = t.types || [], seasons = t.seasons || [];
  if (type === 'movie' && (types.includes('series') || seasons.length > 0)) continue;
  if (type === 'series' && types.includes('movie') && seasons.length === 0) continue;
- 
- if (expectedYear && yearNum > 1900) {
- var diff = Math.abs(yearNum - parseInt(expectedYear));
- if (diff > 2) {
- console.log('[jac.red] ⏭️ Bỏ qua vì năm ' + yearNum + ' không khớp ±2 năm với ' + expectedYear);
- continue;
- }
- }
  
  seen.set(key, true);
  var qualityText = ''; if (t.quality === 2160) qualityText = '4K'; else if (t.quality === 1080) qualityText = '1080p'; else if (t.quality === 720) qualityText = '720p'; else if (t.quality === 480) qualityText = '480p'; else if (t.quality) qualityText = t.quality + 'p';
  var videoType = ''; if (t.videotype) { var vt = t.videotype.toLowerCase(); if (vt.includes('hdr') || vt.includes('dolby')) videoType = 'HDR'; else if (vt.includes('sdr')) videoType = 'SDR'; }
  var audio = ''; if (t.voice && Array.isArray(t.voice) && t.voice.length > 0) audio = t.voice.filter(function(v){return v;}).join('/');
+ var yearNum = parseInt(t.relased || t.released || t.related || '0') || 0;
  unique.push({ original: t, title: decodeUnicode(t.title || ''), sizeGB: parseSize(t.sizeName || t.size), date: t.createdTime ? new Date(t.createdTime).getTime() : 0, sid: t.sid || t.seeds || t.seeders || 0, tracker: t.tracker || 'Unknown', magnet: t.magnet, quality: qualityText, videoType: videoType, audio: audio, year: yearNum });
  newCount++;
  }
  }
- console.log('[jac.red] ' + sourceName + ' → ' + arr.length + ' kết quả, +' + newCount + ' unique');
+ console.log('[jac.red] ' + sourceName + ' +' + newCount + ' unique');
  return newCount;
  }
  
  var promises = [];
- if (ruTitle) promises.push(fetch(apiUrl + '?search=' + encodeURIComponent(ruTitle), { timeout: 120000 }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }).then(function(arr) { addResults(arr, 'RU "' + ruTitle + '"'); }));
- promises.push(fetch(apiUrl + '?search=' + encodeURIComponent(imdbId), { timeout: 120000 }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }).then(function(arr) { addResults(arr, 'IMDb "' + imdbId + '"'); }));
+ if (ruTitle) {
+ promises.push(fetch(apiUrl + '?search=' + encodeURIComponent(ruTitle), { timeout: 120000 }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }).then(function(arr) { addResults(arr, 'RU'); }));
+ }
+ promises.push(fetch(apiUrl + '?search=' + encodeURIComponent(imdbId), { timeout: 120000 }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }).then(function(arr) { addResults(arr, 'IMDb'); }));
  
  return Promise.all(promises).then(function() {
  if (unique.length === 0) return [];
@@ -393,13 +387,7 @@ function searchKnaben(query, maxResults, type, preferPack, season, episode) {
 // ===================== MAGNETZ =====================
 function searchMagnetz(query, maxResults, type, preferPack, season, episode) {
     var sortParam = "size";
-    var finalQuery = query;
-    if (type === 'series' && !preferPack && season && episode) {
-        var s = String(season).padStart(2, '0');
-        var e = String(episode).padStart(2, '0');
-        finalQuery = query + ' S' + s + 'E' + e;
-    }
-    var baseUrl = MAGNETZ_BASE_URL + "?query=" + encodeURIComponent(finalQuery) + "&sort=" + sortParam;
+    var baseUrl = MAGNETZ_BASE_URL + "?query=" + encodeURIComponent(query) + "&sort=" + sortParam;
     maxResults = maxResults || 30;
     
     function fetchPage(page) {
@@ -497,7 +485,6 @@ function handleStream(type, id, cfg, res, pub) {
  
  // ===================== KNABEN =====================
  if (cfg.knabenEnabled) {
- var metaType = (type === 'series') ? 'tv' : 'movie';
  Promise.all([
  getRuTitleFromTMDb(imdbId, type),
  getOriginalTitleFromTMDb(imdbId, type)
@@ -521,7 +508,6 @@ function handleStream(type, id, cfg, res, pub) {
  var isSingleEpisode = episodeMatch !== null;
  var isPack = (type === 'series' && !isSingleEpisode);
  
- // Lọc season cho Knaben Pack
  if (isPack && season > 0) {
  var sPad = String(season).padStart(2, '0');
  var seasonPattern = new RegExp('S' + sPad + '(?:[^\\d]|$)|Season\\s*' + season + '(?:[^\\d]|$)|第\\s*' + season + '\\s*季|S' + season + '(?:[^\\d]|$)', 'i');
@@ -542,18 +528,16 @@ function handleStream(type, id, cfg, res, pub) {
  }
  
  var sizeGB = t.sizeGB.toFixed(2);
- var streamName = '🟠 ' + t.tracker;
- var badge = '';
- if (type === 'series') badge = isPack ? '📦 PACK | ' : '🎬 TẬP LẺ | ';
- var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + ' seeds\n📡 ' + t.tracker;
+ var badge = type === 'series' ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
+ var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + '\n📡 ' + t.tracker;
  
  if (type === 'movie') {
- streams.push({ name: streamName, title: displayTitle, url: ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
+ streams.push({ name: '🟠 ' + t.tracker, title: displayTitle, url: ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
  } else {
  var url = isPack
  ? pub + '/play?magnet=' + encodeURIComponent(t.magnet) + '&s=' + season + '&e=' + episode + '&title=' + encodeURIComponent(title) + '&ts=' + encodeURIComponent(ts)
  : ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play';
- streams.push({ name: streamName, title: displayTitle, url: url, behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
+ streams.push({ name: '🟠 ' + t.tracker, title: displayTitle, url: url, behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
  }
  });
  sendResponse();
@@ -562,14 +546,24 @@ function handleStream(type, id, cfg, res, pub) {
  
  // ===================== MAGNETZ =====================
  if (cfg.magnetzEnabled) {
- var metaType2 = (type === 'series') ? 'tv' : 'movie';
  Promise.all([
  getRuTitleFromTMDb(imdbId, type),
  getOriginalTitleFromTMDb(imdbId, type)
  ]).then(function(titles) {
  var originalTitle = titles[1];
  var query = originalTitle || imdbId;
- console.log('[Magnetz] Search: "' + query + '"');
+ 
+ if (type === 'movie') {
+ var year = TMDB_CACHE[imdbId + '_year'] || '';
+ if (year) query = query + ' ' + year;
+ console.log('[Magnetz] Search: "' + query + '" (movie: tên + năm)');
+ } else {
+ if (season > 0) {
+ query = query + ' S' + String(season).padStart(2, '0');
+ }
+ console.log('[Magnetz] Search: "' + query + '" (series: tên + Sxx)');
+ }
+ 
  return searchMagnetz(query, cfg.maxResults || 30, type, cfg.preferPack, season, episode);
  }).catch(function() { return searchMagnetz(imdbId, cfg.maxResults || 30, type, cfg.preferPack, season, episode); })
  .then(function(results) {
@@ -586,7 +580,6 @@ function handleStream(type, id, cfg, res, pub) {
  var isSingleEpisode = episodeMatch !== null;
  var isPack = (type === 'series' && !isSingleEpisode);
  
- // Lọc season cho Magnetz Pack - logic giống Knaben
  if (isPack && season > 0) {
  var sPad = String(season).padStart(2, '0');
  var seasonPattern = new RegExp('S' + sPad + '(?:[^\\d]|$)|Season\\s*' + season + '(?:[^\\d]|$)|第\\s*' + season + '\\s*季|S' + season + '(?:[^\\d]|$)', 'i');
@@ -607,18 +600,16 @@ function handleStream(type, id, cfg, res, pub) {
  }
  
  var sizeGB = t.sizeGB.toFixed(2);
- var streamName = '🟢 ' + t.tracker;
- var badge = '';
- if (type === 'series') badge = isPack ? '📦 PACK | ' : '🎬 TẬP LẺ | ';
- var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + ' seeds\n📡 ' + t.tracker;
+ var badge = type === 'series' ? (isPack ? '📦 PACK | ' : '🎬 EP | ') : '';
+ var displayTitle = badge + title + '\n' + sizeGB + ' GB | 🌱 ' + t.seeds + '\n📡 ' + t.tracker;
  
  if (type === 'movie') {
- streams.push({ name: streamName, title: displayTitle, url: ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
+ streams.push({ name: '🟢 ' + t.tracker, title: displayTitle, url: ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
  } else {
  var url = isPack
  ? pub + '/play?magnet=' + encodeURIComponent(t.magnet) + '&s=' + season + '&e=' + episode + '&title=' + encodeURIComponent(title) + '&ts=' + encodeURIComponent(ts)
  : ts + '/stream/' + encodeURIComponent(title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play';
- streams.push({ name: streamName, title: displayTitle, url: url, behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
+ streams.push({ name: '🟢 ' + t.tracker, title: displayTitle, url: url, behaviorHints: { notWebReady: true, bingeGroup: t.source + '-' + idClean } });
  }
  });
  sendResponse();
@@ -637,38 +628,34 @@ function handleStream(type, id, cfg, res, pub) {
  
  if (type === 'series' && season > 0) {
  var sPad = String(season).padStart(2, '0');
+ 
+ // Pack trọn bộ -> hiện ở tất cả season
  var completePackPattern = /S\d{1,2}[-~]S?\d{1,2}|Season\s*\d+\s*[-~]\s*\d+|сезон[ы]?\s*\d+\s*[-~]\s*\d+|Complete|Полный|Все\s*сезон[ы]?|1-\d+\s*сезон/i;
  var isCompletePack = completePackPattern.test(title);
+ 
  if (!isCompletePack) {
+ // Pattern cho season cụ thể
  var singleSeasonPattern = new RegExp('S' + sPad + '(?:[^\\d]|$)|Season\\s*' + season + '(?:[^\\d]|$)|сезон\\s*' + season + '(?:[^\\d]|$)|' + season + '\\s*сезон', 'i');
- var otherSeasonPattern = /S\d{1,2}(?:[^\d]|$)|Season\s*\d|сезон\s*\d|\d+\s*сезон/gi;
- var hasOtherSeason = false;
- var matches = title.match(otherSeasonPattern);
- if (matches) {
- for (var i = 0; i < matches.length; i++) {
- if (!singleSeasonPattern.test(matches[i])) {
- var otherSeasonMatch = matches[i].match(/\d+/);
- if (otherSeasonMatch && parseInt(otherSeasonMatch[0]) !== season) {
- hasOtherSeason = true; break;
+ var anySeasonPattern = /S\d{1,2}(?:[^\d]|$)|Season\s*\d|сезон\s*\d|\d+\s*сезон/gi;
+ var hasSeasonMention = anySeasonPattern.test(title);
+ 
+ if (hasSeasonMention) {
+ if (!singleSeasonPattern.test(title)) return;
+ } else {
+ if (!isCompletePack) return;
  }
- }
- }
- }
- if (hasOtherSeason) return;
- if (!singleSeasonPattern.test(title) && /S\d{1,2}|Season\s*\d|сезон\s*\d/.test(title)) return;
  }
  }
  
  var trackerDisplay = t.tracker.charAt(0).toUpperCase() + t.tracker.slice(1);
  var sizeGB = t.sizeGB.toFixed(2), seeds = t.sid, quality = t.quality || '', videoType = t.videoType || '', audio = t.audio || '';
- var streamName = '🔴 ' + trackerDisplay;
- var streamTitle = t.title + '\n' + sizeGB + ' GB | 🌱 ' + seeds + ' seeds';
+ var streamTitle = t.title + '\n' + sizeGB + ' GB | 🌱 ' + seeds;
  if (quality) { streamTitle += ' | 🎬 ' + quality; if (videoType) streamTitle += ' ' + videoType; }
  if (audio) streamTitle += ' | 🔊 ' + audio;
  streamTitle += '\n📡 ' + trackerDisplay;
  
- if (type === 'movie') streams.push({ name: streamName, title: streamTitle, url: ts + '/stream/' + encodeURIComponent(t.title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: 'jacred-' + idClean } });
- else streams.push({ name: streamName, title: streamTitle, url: pub + '/play?magnet=' + encodeURIComponent(t.magnet) + '&s=' + season + '&e=' + episode + '&title=' + encodeURIComponent(t.title) + '&ts=' + encodeURIComponent(ts), behaviorHints: { notWebReady: true, bingeGroup: 'jacred-' + idClean } });
+ if (type === 'movie') streams.push({ name: '🔴 ' + trackerDisplay, title: streamTitle, url: ts + '/stream/' + encodeURIComponent(t.title) + '?link=' + encodeURIComponent(t.magnet) + '&index=0&play', behaviorHints: { notWebReady: true, bingeGroup: 'jacred-' + idClean } });
+ else streams.push({ name: '🔴 ' + trackerDisplay, title: streamTitle, url: pub + '/play?magnet=' + encodeURIComponent(t.magnet) + '&s=' + season + '&e=' + episode + '&title=' + encodeURIComponent(t.title) + '&ts=' + encodeURIComponent(ts), behaviorHints: { notWebReady: true, bingeGroup: 'jacred-' + idClean } });
  });
  sendResponse();
  }).catch(function(e) { console.error('[jac.red]', e.message); sendResponse(); });
@@ -686,19 +673,145 @@ function handleStream(type, id, cfg, res, pub) {
  }
 }
 
-// ===================== CONFIG PAGE =====================
+// ===================== CONFIG PAGE (TỐI GIẢN CSS) =====================
 function buildConfigPage(cfg, configStr, pub) {
  var installUrl = pub + (configStr ? '/' + configStr : '') + '/manifest.json';
  var stremioUrl = 'stremio://' + installUrl.replace(/^https?:\/\//, '');
- var githubLink = 'https://github.com/nguyenquocngu93/Hybrid-';
  var commonSort = cfg.commonSortBy || 'size';
  var jacredDomain = cfg.jacredDomain || DEFAULT_JACRED_DOMAIN;
- var sizeMinGB = cfg.sizeMinGB !== undefined ? cfg.sizeMinGB : 0;
- var sizeMaxGB = cfg.sizeMaxGB !== undefined ? cfg.sizeMaxGB : 100;
  var domainOptions = '';
  for (var key in JAC_RED_DOMAINS) domainOptions += '<option value="' + key + '"' + (jacredDomain === key ? ' selected' : '') + '>' + key + '</option>';
  
- var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v6.7.0</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box}:root{--bg:#080812;--bg2:#0d0d1f;--bg3:#12122a;--card:#141428;--border:#1e1e40;--border2:#2a2a50;--text:#e8e8f0;--text2:#9090b0;--text3:#5a5a80;--primary:#7c6df8;--primary2:#9d8fff;--green:#22d3a5;--green2:#10b981;--red:#f87171;--yellow:#fbbf24;--blue:#60a5fa;--grad1:linear-gradient(135deg,#7c6df8,#a855f7);--grad2:linear-gradient(135deg,#22d3a5,#059669);--grad3:linear-gradient(135deg,#f87171,#ef4444);--radius:14px;--radius2:10px;--radius3:8px;--shadow:0 4px 24px rgba(0,0,0,.4)}body{font-family:"Inter",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:24px 16px 48px;line-height:1.6}.wrap{max-width:640px;margin:0 auto}.header{text-align:center;margin-bottom:32px;padding:32px 24px;background:var(--card);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}.header::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at top,rgba(124,109,248,.15),transparent 60%);pointer-events:none}.header h1{font-size:26px;font-weight:700;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px;margin-bottom:6px}.header p{color:var(--text2);font-size:13px;font-weight:400}.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(124,109,248,.15);border:1px solid rgba(124,109,248,.3);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--primary2);margin-top:10px;letter-spacing:.5px}.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:12px;transition:border-color .2s}.card:hover{border-color:var(--border2)}.card-header{display:flex;align-items:center;gap:8px;margin-bottom:16px}.card-header h2{font-size:14px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px}.card-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}.ci-purple{background:rgba(124,109,248,.2)}.ci-green{background:rgba(34,211,165,.2)}.ci-red{background:rgba(248,113,113,.2)}.ci-yellow{background:rgba(251,191,36,.2)}.ci-blue{background:rgba(96,165,250,.2)}.fg{margin-bottom:14px}.fg:last-child{margin-bottom:0}.fg label{display:block;color:var(--text2);font-size:12px;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px}input[type=text],input[type=number],textarea,select{width:100%;padding:11px 14px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius3);color:var(--text);font-size:14px;font-family:"Inter",sans-serif;transition:border-color .2s,box-shadow .2s;outline:none}input[type=text]:focus,input[type=number]:focus,textarea:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(124,109,248,.15)}textarea{resize:vertical;min-height:72px;font-family:"JetBrains Mono",monospace;font-size:12px}select option{background:var(--bg2)}.trow{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}.trow:last-of-type{border:none;padding-bottom:0}.trow-info{flex:1;min-width:0}.trow-info .trow-label{font-size:15px;font-weight:500;color:var(--text)}.trow-info .trow-sub{font-size:12px;color:var(--text3);margin-top:2px}.sw{position:relative;width:46px;height:26px;flex-shrink:0}.sw input{opacity:0;width:0;height:0}.sl{position:absolute;inset:0;background:var(--border2);border-radius:26px;cursor:pointer;transition:.25s}.sl::before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.25s;box-shadow:0 1px 4px rgba(0,0,0,.3)}input:checked+.sl{background:var(--primary)}input:checked+.sl::before{transform:translateX(20px)}.btn{padding:11px 18px;border:none;border-radius:var(--radius3);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;font-family:"Inter",sans-serif;white-space:nowrap}.btn:hover{filter:brightness(1.1);transform:translateY(-1px)}.btn:active{transform:translateY(0)}.btn-ghost{background:var(--bg2);border:1px solid var(--border2);color:var(--text2)}.btn-primary{background:var(--grad1);color:#fff;box-shadow:0 4px 15px rgba(124,109,248,.3)}.btn-green{background:var(--grad2);color:#fff;box-shadow:0 4px 15px rgba(34,211,165,.3)}.btn-full{width:100%}.btn-sm{padding:8px 14px;font-size:12px;border-radius:6px}.btn-row{display:flex;gap:8px;margin-top:8px}.sort-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.sort-btn{padding:14px 8px;background:var(--bg2);border:2px solid var(--border2);border-radius:var(--radius3);color:var(--text2);font-size:12px;font-weight:600;cursor:pointer;text-align:center;transition:all .2s;font-family:"Inter",sans-serif}.sort-btn:hover{border-color:var(--primary);color:var(--text)}.sort-btn.active{border-color:var(--primary);background:rgba(124,109,248,.15);color:var(--primary2)}.sort-btn .sort-icon{font-size:18px;display:block;margin-bottom:4px}.qf-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.qf-label{display:flex;align-items:center;gap:6px;padding:7px 12px;background:var(--bg2);border:1.5px solid var(--border2);border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;transition:all .2s;user-select:none}.qf-label:hover{border-color:var(--primary);color:var(--text)}.qf-label input[type=checkbox]{width:14px;height:14px;accent-color:var(--primary);cursor:pointer}.qf-label.active-qf{border-color:var(--red);background:rgba(248,113,113,.1);color:var(--red)}.url-box{background:var(--bg);border:1px solid var(--border2);border-radius:var(--radius3);padding:12px 14px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--blue);word-break:break-all;margin:14px 0;line-height:1.6}.info-box{background:rgba(124,109,248,.06);border-left:3px solid var(--primary);border-radius:0 var(--radius3) var(--radius3) 0;padding:10px 14px;margin-bottom:14px}.info-box p{color:var(--text2);font-size:13px;line-height:1.6;margin-bottom:2px}.info-box p:last-child{margin-bottom:0}.info-box strong{color:var(--text)}.test-result{margin-top:8px;padding:8px 12px;border-radius:6px;font-size:12px;font-family:"Inter",sans-serif;display:none}.test-result.ok{background:rgba(34,211,165,.1);color:var(--green);border:1px solid rgba(34,211,165,.3)}.test-result.err{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.3)}.test-result.loading{background:rgba(124,109,248,.1);color:var(--primary2);border:1px solid rgba(124,109,248,.3)}.install-row{display:grid;grid-template-columns:auto 1fr;gap:8px}.guide{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-top:8px}.guide h3{font-size:13px;font-weight:600;color:var(--primary2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:14px}.step-item{display:flex;gap:12px;margin-bottom:14px}.step-item:last-child{margin-bottom:0}.step-num{width:24px;height:24px;border-radius:50%;background:rgba(124,109,248,.2);color:var(--primary2);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}.step-content{flex:1}.step-content strong{font-size:13px;color:var(--text);display:block;margin-bottom:4px}.step-content p{font-size:13px;color:var(--text3);line-height:1.6}.gen-wrap{margin:16px 0}.footer{text-align:center;margin-top:32px;padding:20px;color:var(--text3);font-size:13px;border-top:1px solid var(--border)}.footer span{color:var(--red)}.footer a{color:var(--primary2);text-decoration:none}.footer a:hover{text-decoration:underline}.hint{font-size:12px;color:var(--text3);margin-top:5px;line-height:1.5}.hint a{color:var(--primary2);text-decoration:none}.hint a:hover{text-decoration:underline}.divider{height:1px;background:var(--border);margin:14px 0}.tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:.4px}.tag-green{background:rgba(34,211,165,.15);color:var(--green);border:1px solid rgba(34,211,165,.25)}.tag-red{background:rgba(248,113,113,.15);color:var(--red);border:1px solid rgba(248,113,113,.25)}.tag-yellow{background:rgba(251,191,36,.15);color:var(--yellow);border:1px solid rgba(251,191,36,.25)}</style></head><body><div class="wrap"><div class="header"><h1>🎬 Hybrid Addon</h1><p>Torrentio · jac.red · Knaben · Magnetz → TorrServer</p><div class="badge">✨ Version 6.7.0</div></div><div class="card"><div class="card-header"><div class="card-icon ci-green">🔗</div><h2>Torrentio Config</h2></div><div class="fg"><label>Dán link config Torrentio</label><textarea id="configLink" placeholder="https://torrentio.strem.fun/providers=yts|sort=size|.../manifest.json"></textarea></div><div class="btn-row"><button class="btn btn-ghost" style="flex:1" onclick="applyTorrentioConfig()">⚡ Áp dụng</button><button class="btn btn-ghost" style="flex:1" onclick="resetTorrentioConfig()">🔄 Reset mặc định</button></div></div><div class="card"><div class="card-header"><div class="card-icon ci-purple">📡</div><h2>Nguồn dữ liệu</h2></div><div class="trow"><div class="trow-info"><div class="trow-label">🟢 Torrentio</div><div class="trow-sub">Tổng hợp nhiều tracker quốc tế, chất lượng cao</div></div><label class="sw"><input type="checkbox" id="torrentioEnabled"' + (cfg.torrentioEnabled ? ' checked' : '') + '><span class="sl"></span></label></div><div class="trow"><div class="trow-info"><div class="trow-label">🟠 Knaben</div><div class="trow-sub">Tổng hợp từ TPB, 1337x, YTS, Nyaa...</div></div><label class="sw"><input type="checkbox" id="knabenEnabled"' + (cfg.knabenEnabled ? ' checked' : '') + '><span class="sl"></span></label></div><div class="trow"><div class="trow-info"><div class="trow-label">🟢 Magnetz</div><div class="trow-sub">Công cụ tìm kiếm torrent quốc tế</div></div><label class="sw"><input type="checkbox" id="magnetzEnabled"' + (cfg.magnetzEnabled ? ' checked' : '') + '><span class="sl"></span></label></div><div class="trow"><div class="trow-info"><div class="trow-label">🔴 jac.red</div><div class="trow-sub">Tracker Nga: RuTracker, KinoZal, NNMClub, Toloka...</div></div><label class="sw"><input type="checkbox" id="jacredEnabled"' + (cfg.jacredEnabled ? ' checked' : '') + '><span class="sl"></span></label></div><div class="divider"></div><div class="fg" style="margin-top:14px"><label>Domain jac.red</label><select id="jacredDomain">' + domainOptions + '</select><p class="hint">Đổi domain nếu domain chính không truy cập được</p></div></div><div class="card"><div class="card-header"><div class="card-icon ci-blue">🖥</div><h2>TorrServer</h2></div><div class="fg"><label>URL TorrServer</label><div style="display:flex;gap:8px;align-items:center"><input type="text" id="tsUrl" value="' + (cfg.torrServerUrl || '') + '" placeholder="http://192.168.1.100:8090" style="flex:1"><button class="btn btn-ghost btn-sm" onclick="testTorrServer()">🔌 Test</button></div><div id="tsTestResult" class="test-result"></div><p class="hint">Xem torrent online không cần tải về. <a href="https://github.com/YouROK/TorrServer" target="_blank">Tải TorrServer</a></p></div></div><div class="card"><div class="card-header"><div class="card-icon ci-yellow">⚙️</div><h2>Bộ lọc chung</h2></div><p style="font-size:11px;color:var(--text3);margin-bottom:16px">Áp dụng cho jac.red, Knaben, Magnetz. Torrentio có cấu hình riêng.</p><div class="fg"><label>Sắp xếp theo</label><div class="sort-grid"><div class="sort-btn' + (commonSort === 'size' ? ' active' : '') + '" onclick="setCommonSort(\'size\',this)"><span class="sort-icon">💾</span>Dung lượng</div><div class="sort-btn' + (commonSort === 'seeds' ? ' active' : '') + '" onclick="setCommonSort(\'seeds\',this)"><span class="sort-icon">👥</span>Seeds</div><div class="sort-btn' + (commonSort === 'date' ? ' active' : '') + '" onclick="setCommonSort(\'date\',this)"><span class="sort-icon">📅</span>Mới nhất</div></div><input type="hidden" id="commonSort" value="' + commonSort + '"></div><div class="fg"><label>Số kết quả tối đa</label><input type="number" id="maxResults" value="' + (cfg.maxResults || 30) + '" min="5" max="100"></div><div class="fg"><label>📏 Lọc dung lượng (GB)</label><div style="display:flex;gap:8px"><input type="number" id="minSize" placeholder="Tối thiểu" value="' + (cfg.sizeMinGB || '') + '" style="flex:1" step="0.5" min="0"><input type="number" id="maxSize" placeholder="Tối đa" value="' + (cfg.sizeMaxGB || '') + '" style="flex:1" step="0.5" min="0"></div><p class="hint" style="margin-top:4px">Nhập số GB. Để trống tối đa = không giới hạn</p></div><div class="fg"><label>🚫 Ẩn theo độ phân giải</label><div class="qf-grid"><label class="qf-label" id="qfl-480p"><input type="checkbox" value="480p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('480p') ? 'checked' : '') + ' onchange="updateQfLabel(this)"> 480p</label><label class="qf-label" id="qfl-720p"><input type="checkbox" value="720p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('720p') ? 'checked' : '') + ' onchange="updateQfLabel(this)"> 720p</label><label class="qf-label" id="qfl-1080p"><input type="checkbox" value="1080p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('1080p') ? 'checked' : '') + ' onchange="updateQfLabel(this)"> 1080p</label><label class="qf-label" id="qfl-4K"><input type="checkbox" value="4K" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('4K') ? 'checked' : '') + ' onchange="updateQfLabel(this)"> 4K</label></div><p class="hint">Tick để ẩn torrent có độ phân giải tương ứng</p></div></div><div class="card"><div class="card-header"><div class="card-icon ci-purple">🔍</div><h2>Tùy chỉnh tìm kiếm</h2></div><div class="trow"><div class="trow-info"><div class="trow-label">📦 Ưu tiên Pack</div><div class="trow-sub">Tắt để tìm tập lẻ chính xác (SxxExx)</div></div><label class="sw"><input type="checkbox" id="preferPack"' + (cfg.preferPack !== false ? ' checked' : '') + '><span class="sl"></span></label></div></div><div class="card"><div class="card-header"><div class="card-icon ci-red">🎌</div><h2>Anime Mode</h2></div><div class="trow"><div class="trow-info"><div class="trow-label">🎌 Bật Anime Mode</div><div class="trow-sub">Bật khi xem anime bị chọn sai tập. Lọc file <500MB, bỏ OP/ED, đếm thứ tự.</div></div><label class="sw"><input type="checkbox" id="animeMode"' + (cfg.animeMode ? ' checked' : '') + '><span class="sl"></span></label></div></div><div class="card"><div class="card-header"><div class="card-icon ci-green">📦</div><h2>Link cài đặt</h2></div><div class="url-box" id="iurl">' + installUrl + '</div><div class="install-row"><button class="btn btn-ghost" onclick="copyUrl()">📋 Copy</button><a class="btn btn-green" href="' + stremioUrl + '" id="slink">▶ Cài vào Stremio</a></div></div><div class="gen-wrap"><button class="btn btn-primary btn-full" style="padding:16px;font-size:15px;border-radius:var(--radius)" onclick="gen()">🔗 Tạo Link & Cập nhật</button></div><div class="guide"><h3>📖 Hướng dẫn sử dụng</h3><div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>Cấu hình nguồn</strong><p>Bật/tắt nguồn jac.red, Torrentio, Knaben, Magnetz. Nhập URL TorrServer và test kết nối.</p></div></div><div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>Bộ lọc</strong><p>Chọn cách sắp xếp, giới hạn số kết quả, lọc theo dung lượng và độ phân giải.</p></div></div><div class="step-item"><div class="step-num">3</div><div class="step-content"><strong>Tùy chỉnh tìm kiếm</strong><p>Chọn ưu tiên Pack hoặc tìm tập lẻ.</p></div></div><div class="step-item"><div class="step-num">4</div><div class="step-content"><strong>Tạo link & Cài đặt</strong><p>Nhấn "Tạo Link", copy hoặc nhấn "Cài vào Stremio" để cài trực tiếp.</p></div></div><div class="step-item"><div class="step-num">5</div><div class="step-content"><strong>Anime Mode</strong><p>Bật khi xem anime bị chọn sai tập. Tự động lọc và đếm tập theo thứ tự file.</p></div></div></div><div class="footer">Made by <strong>fatcatQN</strong> with <span>♥️</span> love · v6.7.0</div></div><script>var currentConfig=' + JSON.stringify({ providers: cfg.providers, sortBy: cfg.sortBy, language: cfg.language, qualityfilter: cfg.qualityfilter }) + ';function updateQfLabel(cb){var lbl=cb.closest("label");if(cb.checked)lbl.classList.add("active-qf");else lbl.classList.remove("active-qf")}document.querySelectorAll(".qf-label input[type=checkbox]").forEach(function(cb){updateQfLabel(cb)});function setCommonSort(v,el){document.getElementById("commonSort").value=v;document.querySelectorAll(".sort-btn").forEach(function(b){b.classList.remove("active")});el.classList.add("active")}function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\\+/g,"-").replace(/\\//g,"_").replace(/=/g,"")}function parseTorrentioLink(link){try{var u=new URL(link.replace("stremio://","https://"));var m=u.pathname.match(/\\/([^\\/]+)\\/manifest\\.json/);if(!m)return null;var p=m[1].split("|");var c={providers:[],sortBy:"size",language:"",qualityfilter:[]};p.forEach(function(x){var kv=x.split("=");var k=kv[0],v=kv[1];if(k==="providers")c.providers=v.split(",");else if(k==="sort")c.sortBy=v;else if(k==="language")c.language=v;else if(k==="qualityfilter")c.qualityfilter=v.split(",")});return c}catch(e){return null}}function applyTorrentioConfig(){var l=document.getElementById("configLink").value.trim();if(!l)return alert("Vui lòng dán link config!");var c=parseTorrentioLink(l);if(!c)return alert("Link không hợp lệ!");currentConfig=c;gen()}function resetTorrentioConfig(){currentConfig=' + JSON.stringify(DEFAULT_TORRENTIO_CONFIG) + ';document.getElementById("configLink").value="";gen()}function getCurrentConfig(){var qualityFilter=Array.from(document.querySelectorAll(".qf-grid input[type=checkbox]:checked")).map(function(c){return c.value});return Object.assign({torrServerUrl:document.getElementById("tsUrl").value.trim(),jacredEnabled:document.getElementById("jacredEnabled").checked,torrentioEnabled:document.getElementById("torrentioEnabled").checked,knabenEnabled:document.getElementById("knabenEnabled").checked,magnetzEnabled:document.getElementById("magnetzEnabled").checked,commonSortBy:document.getElementById("commonSort").value,maxResults:parseInt(document.getElementById("maxResults").value)||30,jacredDomain:document.getElementById("jacredDomain").value,animeMode:document.getElementById("animeMode").checked,preferPack:document.getElementById("preferPack").checked,commonQualityFilter:qualityFilter,sizeMinGB:parseFloat(document.getElementById("minSize").value)||0,sizeMaxGB:parseFloat(document.getElementById("maxSize").value)||100},currentConfig)}function copyUrl(){var url=document.getElementById("iurl").textContent;if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){alert("✅ Đã copy link!")}).catch(function(){fallbackCopy(url)})}else{fallbackCopy(url)}}function fallbackCopy(text){var ta=document.createElement("textarea");ta.value=text;ta.style.cssText="position:fixed;top:-9999px;left:-9999px";document.body.appendChild(ta);ta.select();try{document.execCommand("copy");alert("✅ Đã copy link!")}catch(e){alert("Copy thủ công: "+text)}document.body.removeChild(ta)}function gen(){var c=getCurrentConfig();var e=enc(c);var u=location.protocol+"//"+location.host+"/"+e+"/manifest.json";document.getElementById("iurl").textContent=u;document.getElementById("slink").href="stremio://"+u.replace(/^https?:\\/\\//,"")}async function testTorrServer(){var url=document.getElementById("tsUrl").value.trim();var rd=document.getElementById("tsTestResult");if(!url){rd.className="test-result err";rd.style.display="block";rd.textContent="❌ Vui lòng nhập URL TorrServer";return}if(!url.match(/^https?:\\/\\//))url="http://"+url;rd.className="test-result loading";rd.style.display="block";rd.textContent="⏳ Đang kiểm tra...";try{var ctrl=new AbortController();var tid=setTimeout(function(){ctrl.abort()},8000);var r=await fetch(url+"/echo",{signal:ctrl.signal});clearTimeout(tid);if(r.ok){rd.className="test-result ok";rd.textContent="✅ Kết nối thành công! TorrServer đang hoạt động."}else throw new Error("HTTP "+r.status)}catch(e){rd.className="test-result err";rd.textContent=e.name==="AbortError"?"❌ Timeout: Không kết nối được (8s)":"❌ Lỗi: "+e.message}}</script></body></html>';
+ var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v6.8.0</title>'
+ + '<style>'
+ + '*{margin:0;padding:0;box-sizing:border-box}'
+ + 'body{background:#0a0a14;color:#e0e0f0;font-family:system-ui,sans-serif;padding:16px;font-size:14px}'
+ + '.wrap{max-width:600px;margin:0 auto}'
+ + 'h1{text-align:center;color:#a78bfa;margin-bottom:4px;font-size:20px}'
+ + '.sub{text-align:center;color:#888;margin-bottom:16px;font-size:12px}'
+ + '.card{background:#12122a;border:1px solid #2a2a50;border-radius:10px;padding:14px;margin-bottom:10px}'
+ + '.card h2{color:#a78bfa;font-size:13px;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}'
+ + 'label{display:block;color:#888;font-size:11px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}'
+ + 'input,select,textarea{width:100%;padding:10px;background:#0a0a1e;border:1px solid #2a2a50;border-radius:6px;color:#e0e0f0;font-size:13px;outline:none;margin-bottom:8px}'
+ + 'input:focus,select:focus,textarea:focus{border-color:#a78bfa}'
+ + 'textarea{resize:vertical;min-height:60px;font-family:monospace;font-size:11px}'
+ + '.trow{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #1e1e40}'
+ + '.trow:last-child{border:none;padding-bottom:0}'
+ + '.trow-info{flex:1}'
+ + '.trow-name{font-weight:500;font-size:13px}'
+ + '.trow-sub{color:#666;font-size:11px;margin-top:2px}'
+ + '.sw{position:relative;width:42px;height:24px;flex-shrink:0}'
+ + '.sw input{opacity:0;width:0;height:0;position:absolute}'
+ + '.sw-track{position:absolute;inset:0;background:#2a2a50;border-radius:24px;transition:.2s}'
+ + '.sw-thumb{position:absolute;width:18px;height:18px;top:3px;left:3px;background:#fff;border-radius:50%;transition:.2s}'
+ + '.sw input:checked+.sw-track{background:#7c3aed}'
+ + '.sw input:checked+.sw-thumb{transform:translateX(18px)}'
+ + '.btn{display:inline-block;padding:10px 16px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;text-align:center}'
+ + '.btn-ghost{background:#0a0a1e;border:1px solid #2a2a50;color:#888;width:100%}'
+ + '.btn-purple{background:#7c3aed;color:#fff}'  
+ + '.btn-green{background:#10b981;color:#fff}'
+ + '.btn-full{width:100%}'
+ + '.btn-row{display:flex;gap:8px;margin-top:8px}'
+ + '.btn-row .btn{flex:1}'
+ + '.gen-btn{width:100%;padding:14px;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;background:#7c3aed;color:#fff;margin:12px 0}'
+ + '.url-box{background:#0a0a1e;border:1px solid #2a2a50;border-radius:6px;padding:10px;font-family:monospace;font-size:11px;color:#60a5fa;word-break:break-all;margin:10px 0;cursor:pointer}'
+ + '.sort-row{display:flex;gap:6px;margin-bottom:8px}'
+ + '.sort-btn{flex:1;padding:10px;background:#0a0a1e;border:2px solid #2a2a50;border-radius:6px;color:#888;font-size:11px;font-weight:600;cursor:pointer;text-align:center}'
+ + '.sort-btn.on{border-color:#7c3aed;color:#a78bfa;background:rgba(124,58,237,.1)}'
+ + '.qf-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}'
+ + '.qf-label{display:flex;align-items:center;gap:4px;padding:6px 10px;background:#0a0a1e;border:1.5px solid #2a2a50;border-radius:4px;cursor:pointer;font-size:12px;user-select:none}'
+ + '.qf-label input{width:auto;margin:0}'
+ + '.qf-label.on{border-color:#f87171;color:#f87171}'
+ + '.two-col{display:flex;gap:8px}'
+ + '.two-col>div{flex:1}'
+ + '.hint{font-size:11px;color:#555;margin-top:2px}'
+ + '.test-box{margin-top:6px;padding:8px 10px;border-radius:4px;font-size:11px;display:none}'
+ + '.test-ok{display:block;background:rgba(16,185,129,.1);color:#10b981;border:1px solid rgba(16,185,129,.2)}'
+ + '.test-err{display:block;background:rgba(248,113,113,.1);color:#f87171;border:1px solid rgba(248,113,113,.2)}'
+ + '.test-load{display:block;background:rgba(124,58,237,.1);color:#a78bfa;border:1px solid rgba(124,58,237,.2)}'
+ + '.divider{height:1px;background:#1e1e40;margin:10px 0}'
+ + '.footer{text-align:center;color:#555;font-size:11px;margin-top:16px;padding:10px}'
+ + '</style></head><body><div class="wrap">'
+ + '<h1>Hybrid Addon</h1><p class="sub">v6.8.0 | Torrentio · jac.red · Knaben · Magnetz</p>'
+ 
+ // TORRENTIO CONFIG
+ + '<div class="card"><h2>Torrentio Config</h2>'
+ + '<label>Paste Torrentio link</label>'
+ + '<textarea id="configLink" placeholder="https://torrentio.strem.fun/.../manifest.json"></textarea>'
+ + '<button class="btn btn-ghost btn-full" onclick="applyTIO()">Apply Torrentio</button>'
+ + '</div>'
+ 
+ // SOURCES
+ + '<div class="card"><h2>Sources</h2>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Torrentio</div><div class="trow-sub">Multi-tracker</div></div><label class="sw"><input type="checkbox" id="torrentioEnabled"' + (cfg.torrentioEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Knaben</div><div class="trow-sub">TPB, 1337x, YTS, Nyaa...</div></div><label class="sw"><input type="checkbox" id="knabenEnabled"' + (cfg.knabenEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Magnetz</div><div class="trow-sub">Tên + Năm (movie) / Tên + Sxx (series)</div></div><label class="sw"><input type="checkbox" id="magnetzEnabled"' + (cfg.magnetzEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">jac.red</div><div class="trow-sub">Tên Nga + IMDb | Pack trọn bộ hiện tất cả season</div></div><label class="sw"><input type="checkbox" id="jacredEnabled"' + (cfg.jacredEnabled ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="divider"></div>'
+ + '<label>JacRed Domain</label><select id="jacredDomain">' + domainOptions + '</select>'
+ + '</div>'
+ 
+ // TORRSERVER
+ + '<div class="card"><h2>TorrServer</h2>'
+ + '<label>URL</label>'
+ + '<input type="text" id="tsUrl" value="' + (cfg.torrServerUrl || '') + '" placeholder="http://192.168.1.100:8090">'
+ + '<button class="btn btn-ghost btn-full" onclick="testTS()" style="margin-bottom:6px">Test Connection</button>'
+ + '<div id="tsResult" class="test-box"></div>'
+ + '</div>'
+ 
+ // FILTERS
+ + '<div class="card"><h2>Filters</h2>'
+ + '<label>Sort by</label>'
+ + '<div class="sort-row">'
+ + '<div class="sort-btn' + (commonSort === 'size' ? ' on' : '') + '" onclick="setSort(\'size\',this)">Size</div>'
+ + '<div class="sort-btn' + (commonSort === 'seeds' ? ' on' : '') + '" onclick="setSort(\'seeds\',this)">Seeds</div>'
+ + '<div class="sort-btn' + (commonSort === 'date' ? ' on' : '') + '" onclick="setSort(\'date\',this)">Newest</div>'
+ + '</div><input type="hidden" id="commonSort" value="' + commonSort + '">'
+ + '<div class="two-col"><div><label>Max Results</label><input type="number" id="maxResults" value="' + (cfg.maxResults || 30) + '" min="5" max="100"></div></div>'
+ + '<div class="two-col"><div><label>Min (GB)</label><input type="number" id="minSize" value="' + (cfg.sizeMinGB || '') + '" placeholder="0" step="0.5"></div><div><label>Max (GB)</label><input type="number" id="maxSize" value="' + (cfg.sizeMaxGB || '') + '" placeholder="100" step="0.5"></div></div>'
+ + '<label>Hide Quality</label>'
+ + '<div class="qf-row">'
+ + '<label class="qf-label' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('480p') ? ' on' : '') + '"><input type="checkbox" value="480p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('480p') ? 'checked' : '') + ' onchange="toggleQf(this)">480p</label>'
+ + '<label class="qf-label' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('720p') ? ' on' : '') + '"><input type="checkbox" value="720p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('720p') ? 'checked' : '') + ' onchange="toggleQf(this)">720p</label>'
+ + '<label class="qf-label' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('1080p') ? ' on' : '') + '"><input type="checkbox" value="1080p" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('1080p') ? 'checked' : '') + ' onchange="toggleQf(this)">1080p</label>'
+ + '<label class="qf-label' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('4K') ? ' on' : '') + '"><input type="checkbox" value="4K" ' + (cfg.commonQualityFilter && cfg.commonQualityFilter.includes('4K') ? 'checked' : '') + ' onchange="toggleQf(this)">4K</label>'
+ + '</div>'
+ + '</div>'
+ 
+ // OPTIONS
+ + '<div class="card"><h2>Options</h2>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Prefer Pack</div><div class="trow-sub">Show packs instead of single episodes</div></div><label class="sw"><input type="checkbox" id="preferPack"' + (cfg.preferPack !== false ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '<div class="trow"><div class="trow-info"><div class="trow-name">Anime Mode</div><div class="trow-sub">Optimize episode selection for anime</div></div><label class="sw"><input type="checkbox" id="animeMode"' + (cfg.animeMode ? ' checked' : '') + '><div class="sw-track"></div><div class="sw-thumb"></div></label></div>'
+ + '</div>'
+ 
+ // GENERATE
+ + '<button class="gen-btn" onclick="gen()">Generate & Update</button>'
+ 
+ // INSTALL
+ + '<div class="card"><h2>Install</h2>'
+ + '<label>Manifest URL (click to copy)</label>'
+ + '<div class="url-box" id="iurl" onclick="copyUrl()">' + installUrl + '</div>'
+ + '<div class="btn-row"><button class="btn btn-ghost" onclick="copyUrl()">Copy</button><a class="btn btn-green" href="' + stremioUrl + '" id="slink">Install</a></div>'
+ + '</div>'
+ 
+ + '<div class="footer">Hybrid Addon v6.8.0 | fatcatQN</div>'
+ + '</div>'
+ 
+ + '<script>'
+ + 'var tioCfg=' + JSON.stringify({ providers: cfg.providers, sortBy: cfg.sortBy, language: cfg.language, qualityfilter: cfg.qualityfilter }) + ';'
+ + 'var defaultTio=' + JSON.stringify(DEFAULT_TORRENTIO_CONFIG) + ';'
+ + 'function toggleQf(cb){var l=cb.parentElement;if(cb.checked)l.classList.add("on");else l.classList.remove("on")}'
+ + 'function setSort(v,el){document.getElementById("commonSort").value=v;document.querySelectorAll(".sort-btn").forEach(function(b){b.classList.remove("on")});el.classList.add("on")}'
+ + 'function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\\+/g,"-").replace(/\\//g,"_").replace(/=/g,"")}'
+ + 'function getCfg(){var qf=[];document.querySelectorAll(".qf-row input:checked").forEach(function(c){qf.push(c.value)});return{torrServerUrl:document.getElementById("tsUrl").value.trim(),jacredEnabled:document.getElementById("jacredEnabled").checked,torrentioEnabled:document.getElementById("torrentioEnabled").checked,knabenEnabled:document.getElementById("knabenEnabled").checked,magnetzEnabled:document.getElementById("magnetzEnabled").checked,commonSortBy:document.getElementById("commonSort").value,maxResults:parseInt(document.getElementById("maxResults").value)||30,jacredDomain:document.getElementById("jacredDomain").value,animeMode:document.getElementById("animeMode").checked,preferPack:document.getElementById("preferPack").checked,commonQualityFilter:qf,sizeMinGB:parseFloat(document.getElementById("minSize").value)||0,sizeMaxGB:parseFloat(document.getElementById("maxSize").value)||100,providers:tioCfg.providers,sortBy:tioCfg.sortBy,language:tioCfg.language,qualityfilter:tioCfg.qualityfilter}}'
+ + 'function gen(){var c=getCfg();var e=enc(c);var u=location.protocol+"//"+location.host+"/"+e+"/manifest.json";document.getElementById("iurl").textContent=u;document.getElementById("slink").href="stremio://"+u.replace(/^https?:\\/\\//,"")}'
+ + 'function copyUrl(){var u=document.getElementById("iurl").textContent;if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){alert("Copied!")})}else{prompt("Copy:",u)}}'
+ + 'function parseTIO(l){try{var u=new URL(l.replace("stremio://","https://"));var m=u.pathname.match(/\\/([^\\/]+)\\/manifest\\.json/);if(!m)return null;var p=m[1].split("|");var c={providers:[],sortBy:"size",language:"",qualityfilter:[]};p.forEach(function(x){var kv=x.split("=");if(kv[0]==="providers")c.providers=kv[1]?kv[1].split(","):[];else if(kv[0]==="sort")c.sortBy=kv[1];else if(kv[0]==="language")c.language=kv[1];else if(kv[0]==="qualityfilter")c.qualityfilter=kv[1]?kv[1].split(","):[]});return c}catch(e){return null}}'
+ + 'function applyTIO(){var l=document.getElementById("configLink").value.trim();if(!l){alert("Paste link first!");return}var c=parseTIO(l);if(!c){alert("Invalid!");return}tioCfg=c;gen();alert("Applied!")}'
+ + 'async function testTS(){var url=document.getElementById("tsUrl").value.trim();var rd=document.getElementById("tsResult");if(!url){rd.className="test-box test-err";rd.textContent="Enter URL";return}if(!/^https?:\\/\\//.test(url))url="http://"+url;rd.className="test-box test-load";rd.textContent="Testing...";try{var ctrl=new AbortController();var tmr=setTimeout(function(){ctrl.abort()},8000);var r=await fetch(url+"/echo",{signal:ctrl.signal});clearTimeout(tmr);if(r.ok){rd.className="test-box test-ok";rd.textContent="Connected!"}else throw new Error("HTTP "+r.status)}catch(e){rd.className="test-box test-err";rd.textContent=e.name==="AbortError"?"Timeout":"Error: "+e.message}}'
+ + '<\/script>'
+ + '</body></html>';
+ 
  return html;
 }
 
@@ -735,12 +848,6 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(PORT, '0.0.0.0', function() {
- console.log('\n✅ Hybrid Addon v6.7.0: http://localhost:' + PORT);
- console.log('⚙️ Configure: http://localhost:' + PORT + '/configure');
- console.log('🎌 Anime Mode:', DEFAULT_CONFIG.animeMode ? 'ON' : 'OFF');
- console.log('🟠 Knaben:', DEFAULT_CONFIG.knabenEnabled ? 'ON' : 'OFF');
- console.log('🟢 Magnetz:', DEFAULT_CONFIG.magnetzEnabled ? 'ON' : 'OFF');
- console.log('📦 Prefer Pack:', DEFAULT_CONFIG.preferPack ? 'ON' : 'OFF');
- console.log('🌐 Knaben search language: English (default)');
- console.log('❤️ Made with love\n');
+ console.log('\nHybrid Addon v6.8.0 : http://localhost:' + PORT);
+ console.log('Configure: http://localhost:' + PORT + '/configure\n');
 });
