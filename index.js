@@ -112,7 +112,7 @@ function buildTorrentioBase(cfg) {
 function buildManifest(cfg, configStr, pub) {
  return {
  id: 'com.hybrid.addon',
- version: '6.9.0',
+ version: '7.0.0',
  name: 'Hybrid Addon',
  description: 'Torrentio + jac.red + Knaben + Magnetz',
  resources: ['stream'],
@@ -702,7 +702,7 @@ function buildConfigPage(cfg, configStr, pub) {
  var domainOptions = '';
  for (var key in JAC_RED_DOMAINS) domainOptions += '<option value="' + key + '"' + (jacredDomain === key ? ' selected' : '') + '>' + key + '</option>';
  
- var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v6.9.0</title>'
+ var html = '<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hybrid Addon v7.0.0</title>'
  + '<style>'
  + '*{margin:0;padding:0;box-sizing:border-box}'
  + 'body{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#e0e0f0;font-family:"Segoe UI",system-ui,sans-serif;padding:20px;font-size:14px;min-height:100vh;position:relative;overflow-x:hidden}'
@@ -716,7 +716,7 @@ function buildConfigPage(cfg, configStr, pub) {
  + '.card h2::before{content:"";width:4px;height:16px;background:linear-gradient(180deg,#a78bfa,#60a5fa);border-radius:2px}'
  + 'label{display:block;color:rgba(255,255,255,0.6);font-size:11px;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600}'
  + 'input,select,textarea{width:100%;padding:14px 16px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.1);border-radius:12px;color:#fff;font-size:14px;outline:none;margin-bottom:12px;transition:border-color 0.3s,box-shadow 0.3s;box-shadow:inset 0 2px 4px rgba(0,0,0,0.2)}'
- + 'input[type=range]{accent-color:#a78bfa;padding:6px 0;cursor:pointer}'
+ + 'input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;background:linear-gradient(90deg,rgba(167,139,250,0.15),rgba(96,165,250,0.15));border:1px solid rgba(255,255,255,0.1);border-radius:8px;outline:none;cursor:pointer;margin:8px 0 16px;transition:all .3s}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:linear-gradient(135deg,#a78bfa,#7c3aed);border-radius:50%;border:2px solid rgba(255,255,255,0.3);box-shadow:0 2px 8px rgba(167,139,250,0.4);cursor:pointer;transition:all .2s}input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15);box-shadow:0 4px 12px rgba(167,139,250,0.6)}input[type=range]::-moz-range-thumb{width:24px;height:24px;background:linear-gradient(135deg,#a78bfa,#7c3aed);border-radius:50%;border:2px solid rgba(255,255,255,0.3);box-shadow:0 2px 8px rgba(167,139,250,0.4);cursor:pointer}input[type=range]::-moz-range-track{height:8px;background:linear-gradient(90deg,rgba(167,139,250,0.15),rgba(96,165,250,0.15));border:1px solid rgba(255,255,255,0.1);border-radius:8px}'
  + 'input:focus,select:focus,textarea:focus{border-color:#a78bfa;box-shadow:inset 0 2px 4px rgba(0,0,0,0.2),0 0 0 3px rgba(167,139,250,0.2)}'
  + 'input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.3)}'
  + 'textarea{resize:vertical;min-height:80px;font-family:"SF Mono","Fira Code",monospace;font-size:12px}'
@@ -767,8 +767,10 @@ function buildConfigPage(cfg, configStr, pub) {
  + '.footer{text-align:center;color:rgba(255,255,255,0.4);font-size:12px;margin-top:24px;padding:16px}'
  + '.footer span{background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}'
  + '@media(max-width:480px){.wrap{padding:0 4px}.card{padding:16px;border-radius:16px}.gen-btn{font-size:14px;padding:16px}}'
- + '</style><style>.hybr-header-logo{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;background:rgba(138,43,226,0.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(216,112,147,0.3);border-radius:14px;box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);color:#ffffff;font-family:inherit}.hybr-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#a855f7,#6366f1);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(168,85,247,0.4);font-weight:bold;font-size:16px;color:#fff}.hybr-logo-text{display:flex;flex-direction:column}.hybr-logo-title{font-size:16px;font-weight:700;letter-spacing:0.5px;background:linear-gradient(135deg,#f3e8ff,#d8b4fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hybr-logo-version{font-size:10px;color:#c084fc;opacity:0.8}</style></head><body><div class="wrap">'
- + '<h1>✨ Hybrid Addon</h1><p class="sub">v6.9.0 | Torrentio · jac.red · Knaben · Magnetz</p>'
+ + '</style><style>.logo-wrap{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:8px;padding:16px 20px;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.3)}.logo-icon{flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(167,139,250,0.4))}.logo-text{display:flex;flex-direction:column;gap:2px}.logo-title{font-size:22px;font-weight:800;letter-spacing:-0.5px;background:linear-gradient(135deg,#e0e7ff,#c4b5fd,#f9a8d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.logo-ver{font-size:11px;font-weight:600;color:#a78bfa;opacity:0.8;letter-spacing:1px;text-transform:uppercase}</style></head><body><div class="wrap">'
+ + '<div class="logo-wrap"><div class="logo-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><defs><linearGradient id="lg" x1="0" y1="0" x2="36" y2="36"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#f472b6"/></linearGradient></defs><rect x="2" y="2" width="32" height="32" rx="10" fill="url(#lg)"/><path d="M18 8 L24 14 L22 14 L22 22 L20 22 L20 26 L16 26 L16 22 L14 22 L14 14 L12 14 Z" fill="#fff" opacity="0.95"/><circle cx="18" cy="16" r="2" fill="#a78bfa"/></svg></div>'
++ '<div class="logo-text"><div class="logo-title">Hybrid Addon</div><div class="logo-ver">v7.0.0</div></div></div>'
++ '<p class="sub">Torrentio · jac.red · Knaben · Magnetz</p>'
  
  + '<div class="card"><h2>Torrentio Config</h2>'
  + '<label>Paste Torrentio link</label>'
@@ -823,7 +825,7 @@ function buildConfigPage(cfg, configStr, pub) {
  + '<div class="btn-row"><button class="btn btn-ghost" onclick="copyUrl()">Copy</button><a class="btn btn-green" href="' + stremioUrl + '" id="slink">Install</a></div>'
  + '</div>'
  
- + '<div class="footer">Hybrid Addon v6.9.0 | <span>fatcatQN</span></div>'
+ + '<div class="footer">Hybrid Addon v7.0.0 | <span>fatcatQN</span></div>'
  + '</div>'
  
  + '<script>'
@@ -877,7 +879,7 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(PORT, '0.0.0.0', function() {
- console.log('\nHybrid Addon v6.9.0 : http://localhost:' + PORT);
+ console.log('\nHybrid Addon v7.0.0 : http://localhost:' + PORT);
  console.log('Configure: http://localhost:' + PORT + '/configure');
  console.log('Types: movie, series, anime\n');
 });
