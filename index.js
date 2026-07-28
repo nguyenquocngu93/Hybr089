@@ -207,7 +207,7 @@ function getCachedFiles(ts, magnet, title) {
  return Promise.resolve({ hash: cacheKey, files: cached.files });
  }
  return getTorrServerFiles(ts, magnet, title).then(function(result) {
- if (result && result.files.length > 0 && cacheKey)
+ if (result && result.files && result.files.length > 0 && cacheKey)
  torrServerCache[cacheKey] = { files: result.files, timestamp: Date.now() };
  return result;
  });
