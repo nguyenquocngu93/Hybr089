@@ -8,7 +8,7 @@ if (!fs.existsSync(path)) {
 
 let content = fs.readFileSync(path, 'utf8');
 
-// 1. Chèn CSS Glassmorphism vào đầu file hoặc phần style
+// 1. Chèn CSS Glassmorphism vào đầu phần style hoặc trước thẻ </head>
 const glassCss = `
 <style>
 .hybr-header-logo {
@@ -46,23 +46,16 @@ const glassCss = `
 }
 .hybr-logo-version { font-size: 10px; color: #c084fc; opacity: 0.8; }
 </style>
-`;
+</head>`;
 
-// 2. Định nghĩa HTML Header logo v6.1.0
-const headerHtml = `
-    <div class="hybr-header-logo">
-        <div class="hybr-logo-icon">H</div>
-        <div class="hybr-logo-text">
-            <span class="hybr-logo-title">Hybr089</span>
-            <span class="hybr-logo-version">v6.1.0</span>
-        </div>
-    </div>
-`;
+// 2. Bump version lên v6.9.0 hoặc tuỳ chỉnh theo ý ní
+content = content.replace(/v6\.8\.\d|v6\.9\.0/g, 'v6.9.0');
 
-// Tùy chỉnh logic thay thế phiên bản cũ hoặc chèn header tùy vào cấu trúc index.js của ní ở đây
-// Ví dụ: cập nhật version string
-content = content.replace(/v6\.0\.9/g, 'v6.1.0');
+// 3. Thực hiện chèn CSS vào vị trí thẻ </head> nếu chưa có
+if (!content.includes('.hybr-header-logo')) {
+    content = content.replace('</head>', glassCss);
+}
 
 // Ghi đè lại file index.js
 fs.writeFileSync(path, content, 'utf8');
-console.log('Đã patch thành công giao diện logo glass tím và bump lên v6.1.0!');
+console.log('Đã patch thành công giao diện logo glass tím và bump version vào index.js!');
