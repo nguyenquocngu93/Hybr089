@@ -8,7 +8,7 @@ if (!fs.existsSync(path)) {
 
 let content = fs.readFileSync(path, 'utf8');
 
-// 1. Chèn CSS Glassmorphism vào đầu phần style hoặc trước thẻ </head>
+// Định nghĩa CSS Glassmorphism dạng template literal chuẩn chỉnh
 const glassCss = `
 <style>
 .hybr-header-logo {
@@ -48,14 +48,14 @@ const glassCss = `
 </style>
 </head>`;
 
-// 2. Bump version lên v6.9.0 hoặc tuỳ chỉnh theo ý ní
-content = content.replace(/v6\.8\.\d|v6\.9\.0/g, 'v6.9.0');
+// Bump version lên v6.9.0
+content = content.replace(/v6\.\d\.\d/g, 'v6.9.0');
 
-// 3. Thực hiện chèn CSS vào vị trí thẻ </head> nếu chưa có
+// Chèn CSS vào thẻ </head> nếu chưa có
 if (!content.includes('.hybr-header-logo')) {
     content = content.replace('</head>', glassCss);
 }
 
 // Ghi đè lại file index.js
 fs.writeFileSync(path, content, 'utf8');
-console.log('Đã patch thành công giao diện logo glass tím và bump version vào index.js!');
+console.log('Đã patch thành công giao diện và bump version lên v6.9.0!');
