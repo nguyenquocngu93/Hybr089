@@ -767,44 +767,7 @@ function buildConfigPage(cfg, configStr, pub) {
  + '.footer{text-align:center;color:rgba(255,255,255,0.4);font-size:12px;margin-top:24px;padding:16px}'
  + '.footer span{background:linear-gradient(135deg,#a78bfa,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:600}'
  + '@media(max-width:480px){.wrap{padding:0 4px}.card{padding:16px;border-radius:16px}.gen-btn{font-size:14px;padding:16px}}'
- + '</style>
-<style>
-.hybr-header-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 16px;
-    background: rgba(138, 43, 226, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(216, 112, 147, 0.3);
-    border-radius: 14px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    color: #ffffff;
-    font-family: inherit;
-}
-.hybr-logo-icon {
-    width: 32px;
-    height: 32px;
-    background: linear-gradient(135deg, #a855f7, #6366f1);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);
-    font-weight: bold;
-    font-size: 16px;
-    color: #fff;
-}
-.hybr-logo-text { display: flex; flex-direction: column; }
-.hybr-logo-title {
-    font-size: 16px; font-weight: 700; letter-spacing: 0.5px;
-    background: linear-gradient(135deg, #f3e8ff, #d8b4fe);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hybr-logo-version { font-size: 10px; color: #c084fc; opacity: 0.8; }
-</style>
-</head><body><div class="wrap">'
+ + '</style><style>.hybr-header-logo{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;background:rgba(138,43,226,0.15);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(216,112,147,0.3);border-radius:14px;box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);color:#ffffff;font-family:inherit}.hybr-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#a855f7,#6366f1);border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(168,85,247,0.4);font-weight:bold;font-size:16px;color:#fff}.hybr-logo-text{display:flex;flex-direction:column}.hybr-logo-title{font-size:16px;font-weight:700;letter-spacing:0.5px;background:linear-gradient(135deg,#f3e8ff,#d8b4fe);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.hybr-logo-version{font-size:10px;color:#c084fc;opacity:0.8}</style></head><body><div class="wrap">'
  + '<h1>✨ Hybrid Addon</h1><p class="sub">v6.9.0 | Torrentio · jac.red · Knaben · Magnetz</p>'
  
  + '<div class="card"><h2>Torrentio Config</h2>'
