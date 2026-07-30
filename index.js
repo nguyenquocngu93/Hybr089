@@ -38,7 +38,7 @@ var DEFAULT_CONFIG = Object.assign({
  commonSortBy: 'size',
  commonQualityFilter: [],
  sizeMinGB: 0,
- sizeMaxGB: 100
+ sizeMaxGB: 1000
 }, DEFAULT_TORRENTIO_CONFIG);
 
 function decodeConfig(str) {
@@ -86,10 +86,25 @@ function parseSize(sn) {
  if (!sn) return 0;
  var s = parseFloat(sn) || 0;
  var up = String(sn).toUpperCase();
+ if (up.includes('TB') || up.includes('ТБ')) return s * 1024;
  if (up.includes('GB') || up.includes('ГБ')) return s;
  if (up.includes('MB') || up.includes('МБ')) return s / 1024;
+ if (up.includes('KB') || up.includes('КБ')) return s / (1024 * 1024);
  if (s > 100) return s / 1024;
  return s;
+}
+
+function isQualityHidden(title, quality, hideList) {
+ if (!hideList || !hideList.length) return false;
+ var t = (title || '').toLowerCase();
+ var q = (quality || '').toLowerCase();
+ for (var i = 0; i < hideList.length; i++) {
+ var h = String(hideList[i]).toLowerCase();
+ if (h === '4k') { if (q === '4k' || /\b(4k|2160p|uhd)\b/.test(t)) return true; }
+ else if (q === h) return true;
+ else if (t.indexOf(h) !== -1) return true;
+ }
+ return false;
 }
 
 function getPublicUrlFromReq(req) {
@@ -481,7 +496,7 @@ function handleStream(type, id, cfg, res, pub) {
  function sendResponse() { if (++completed >= total) { res.writeHead(200, { 'Content-Type': 'application/json' }); res.end(JSON.stringify({ streams: streams })); } }
  var commonSort = cfg.commonSortBy || 'size';
  var minSize = parseFloat(cfg.sizeMinGB) || 0;
- var maxSize = parseFloat(cfg.sizeMaxGB) || 100;
+ var maxSize = parseFloat(cfg.sizeMaxGB) || 1000;
  
  // Kiểm tra có phải anime không
  var isAnime = (type === 'anime' || cfg.animeMode);
@@ -506,8 +521,9 @@ function handleStream(type, id, cfg, res, pub) {
  results.forEach(function(t) {
  if (!t.magnet) return;
  if (t.sizeGB < minSize) return;
- if (maxSize < 100 && t.sizeGB > maxSize) return;
+ if (maxSize < 1000 && t.sizeGB > maxSize) return;
  var title = t.title;
+ if (isQualityHidden(title, null, cfg.commonQualityFilter)) return;
  var episodeMatch = title.match(/\bS(\d{1,2})\s*E(\d{1,2})\b/i);
  var isSingleEpisode = episodeMatch !== null;
  var isPack = (seriesType && !isSingleEpisode);
@@ -578,8 +594,9 @@ function handleStream(type, id, cfg, res, pub) {
  results.forEach(function(t) {
  if (!t.magnet) return;
  if (t.sizeGB < minSize) return;
- if (maxSize < 100 && t.sizeGB > maxSize) return;
+ if (maxSize < 1000 && t.sizeGB > maxSize) return;
  var title = t.title;
+ if (isQualityHidden(title, null, cfg.commonQualityFilter)) return;
  var episodeMatch = title.match(/\bS(\d{1,2})\s*E(\d{1,2})\b/i);
  var isSingleEpisode = episodeMatch !== null;
  var isPack = (seriesType && !isSingleEpisode);
@@ -627,8 +644,9 @@ function handleStream(type, id, cfg, res, pub) {
  results.forEach(function(t) {
  if (!t.magnet) return;
  if (t.sizeGB < minSize) return;
- if (maxSize < 100 && t.sizeGB > maxSize) return;
+ if (maxSize < 1000 && t.sizeGB > maxSize) return;
  var title = t.title;
+ if (isQualityHidden(title, t.quality, cfg.commonQualityFilter)) return;
  
  if (seriesType && season > 0) {
  var sPad = String(season).padStart(2, '0');
@@ -834,7 +852,7 @@ function buildConfigPage(cfg, configStr, pub) {
  + 'function toggleQf(cb){var l=cb.parentElement;if(cb.checked)l.classList.add("on");else l.classList.remove("on")}'
  + 'function setSort(v,el){document.getElementById("commonSort").value=v;document.querySelectorAll(".sort-btn").forEach(function(b){b.classList.remove("on")});el.classList.add("on")}'
  + 'function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\\+/g,"-").replace(/\\//g,"_").replace(/=/g,"")}'
- + 'function getCfg(){var qf=[];document.querySelectorAll(".qf-row input:checked").forEach(function(c){qf.push(c.value)});return{torrServerUrl:document.getElementById("tsUrl").value.trim(),jacredEnabled:document.getElementById("jacredEnabled").checked,torrentioEnabled:document.getElementById("torrentioEnabled").checked,knabenEnabled:document.getElementById("knabenEnabled").checked,magnetzEnabled:document.getElementById("magnetzEnabled").checked,commonSortBy:document.getElementById("commonSort").value,maxResults:parseInt(document.getElementById("maxResults").value)||30,jacredDomain:document.getElementById("jacredDomain").value,animeMode:document.getElementById("animeMode").checked,preferPack:document.getElementById("preferPack").checked,commonQualityFilter:qf,sizeMinGB:parseFloat(document.getElementById("minSize").value)||0,sizeMaxGB:parseFloat(document.getElementById("maxSize").value)||100,providers:tioCfg.providers,sortBy:tioCfg.sortBy,language:tioCfg.language,qualityfilter:tioCfg.qualityfilter}}'
+ + 'function getCfg(){var qf=[];document.querySelectorAll(".qf-row input:checked").forEach(function(c){qf.push(c.value)});return{torrServerUrl:document.getElementById("tsUrl").value.trim(),jacredEnabled:document.getElementById("jacredEnabled").checked,torrentioEnabled:document.getElementById("torrentioEnabled").checked,knabenEnabled:document.getElementById("knabenEnabled").checked,magnetzEnabled:document.getElementById("magnetzEnabled").checked,commonSortBy:document.getElementById("commonSort").value,maxResults:parseInt(document.getElementById("maxResults").value)||30,jacredDomain:document.getElementById("jacredDomain").value,animeMode:document.getElementById("animeMode").checked,preferPack:document.getElementById("preferPack").checked,commonQualityFilter:qf,sizeMinGB:parseFloat(document.getElementById("minSize").value)||0,sizeMaxGB:parseFloat(document.getElementById("maxSize").value)||1000,providers:tioCfg.providers,sortBy:tioCfg.sortBy,language:tioCfg.language,qualityfilter:tioCfg.qualityfilter}}'
  + 'function gen(){var c=getCfg();var e=enc(c);var u=location.protocol+"//"+location.host+"/"+e+"/manifest.json";document.getElementById("iurl").textContent=u;document.getElementById("slink").href="stremio://"+u.replace(/^https?:\\/\\//,"")}'
  + 'function copyUrl(){var u=document.getElementById("iurl").textContent;if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){alert("Copied!")})}else{prompt("Copy:",u)}}'
  + 'function parseTIO(l){try{var u=new URL(l.replace("stremio://","https://"));var m=u.pathname.match(/\\/([^\\/]+)\\/manifest\\.json/);if(!m)return null;var p=m[1].split("|");var c={providers:[],sortBy:"size",language:"",qualityfilter:[]};p.forEach(function(x){var kv=x.split("=");if(kv[0]==="providers")c.providers=kv[1]?kv[1].split(","):[];else if(kv[0]==="sort")c.sortBy=kv[1];else if(kv[0]==="language")c.language=kv[1];else if(kv[0]==="qualityfilter")c.qualityfilter=kv[1]?kv[1].split(","):[]});return c}catch(e){return null}}'
